@@ -50,10 +50,9 @@ Things you may want to cover:
 |status|string|null: false|
 |fee|string|null: false|
 |days|string|null: false|
-|price|numeric|null: false|
+|price|integer|null: false|
 |brand|string||
 |user_id|integer|null: false, foreign_key: true|
-|image_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -66,6 +65,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |item|text|null: false|
+|post_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :post
