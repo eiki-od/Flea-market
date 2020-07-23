@@ -38,7 +38,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :posts
-- has_many :addresses
+- has_many :addresses, dependent: :destroy
 
 ## postsテーブル
 |Column|Type|Options|
@@ -58,7 +58,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :category
-- has_many :images
+- has_many :images, dependent: :destroy
 
 
 ## imagesテーブル
@@ -79,7 +79,7 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :posts
+- has_many :posts, dependent: :destroy
 
 
 ## addressesテーブル
