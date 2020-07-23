@@ -39,6 +39,7 @@ Things you may want to cover:
 ### Association
 - has_many :posts
 - has_many :addresses, dependent: :destroy
+- has_many :cards, dependent: :destroy
 
 ## postsテーブル
 |Column|Type|Options|
@@ -101,3 +102,6 @@ Things you may want to cover:
 |month|string|null: false|
 |year|string|null: false|
 |security_code|string|null: false|
+
+### Association
+- belongs_to :user
