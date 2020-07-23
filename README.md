@@ -99,9 +99,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|month|string|null: false|
-|year|string|null: false|
-|security_code|string|null: false|
+|token|string|null: false|
 
 ### Association
 - belongs_to :user
