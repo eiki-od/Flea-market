@@ -34,17 +34,15 @@ Things you may want to cover:
 |kana_family|string|null: false|
 |kana_first|string|null: false|
 |birth|date|null: false|
-|phone|numeric|null: false|
+|phone|string|null: false|
 
 ### Association
 - has_many :posts
-- has_many :cards
-- belongs_to :addresses
+- has_many :addresses
 
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text|null: false|
 |name|string|null: false|
 |about|text|null: false|
 |size|string|null: false|
@@ -54,54 +52,43 @@ Things you may want to cover:
 |price|numeric|null: false|
 |brand|string||
 |user_id|integer|null: false, foreign_key: true|
+|image_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
-- has_many :categories, through: posts_categories:
+- belongs_to :category
+- has_many :images
 
 
-## posts_categoriesテーブル
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_id|integer||
-|category_id|integer||
+|item|text|null: false|
 
 ### Association
 - belongs_to :post
-- belongs_to :category
 
 
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|major|string|null: false|
-|middle|string|null: false|
-|small|string|null: false|
+|name|string|null: false|
+|ancestry|string|null: false|
+
 
 ### Association
-- has_many :posts, through: posts_categories:
+- has_many :posts
 
 
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |postal_code|string|null: false|
-|prefectural|string|null: false|
+|prefecture_id(active_hash)|integer|null: false|
 |city|string|null: false|
 |street|string|
-
-### Association
-- belongs_to :user
-
-
-## cardsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|number|string|null: false|
-|month|string|null: false|
-|year|string|null: false|
-|security|string|null: false|
 
 ### Association
 - belongs_to :user
