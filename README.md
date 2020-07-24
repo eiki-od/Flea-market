@@ -90,6 +90,8 @@ Things you may want to cover:
 |prefecture_id(active_hash)|integer|null: false|
 |city|string|null: false|
 |street|string|
+|user_id|integer|null: false, foreign_key: true|
+
 
 ### Association
 - belongs_to :user
@@ -100,6 +102,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |token|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
