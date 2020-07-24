@@ -46,8 +46,8 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |about|text|null: false|
-|size|string|null: false|
-|status|string|null: false|
+|size|integer|null: false|
+|status|integer|null: false|
 |fee|string|null: false|
 |days|string|null: false|
 |price|integer|null: false|
