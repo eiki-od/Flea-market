@@ -6,9 +6,9 @@
             = link_to image_tag('logo.png', class: "header-logo"), 'material/logo/logo.png' 
           .search-box-text
             %form.input-form
-              %input.search{:name => "search", :placeholder => "キーワードから探す", :type => "text"}/
+              %input.search{name: "search", placeholder: "キーワードから探す", type: "text"}/
               .submit-icon
-                %input.submitbtn{:name => "submit", :src => "material/icon/icon-search1.png", :type => "image"}/
+                %input.submitbtn{name: "submit", src: "material/icon/icon-search1.png", type: "image"}/
         / navbar（カテゴリーetc）、トップイメージなど
         .search-nav
           %ul.left-lists
@@ -54,9 +54,9 @@
 
                   %ul.imgbox-small
                     %li
-                      = link_to image_tag('a001.png', class: "subimage" :height => "140" :width => "170"), 'material/product-img/a001.png' 
+                      = link_to image_tag('a001.png', class: "subimage" height: "140" width: "170"), 'material/product-img/a001.png' 
                     %li
-                      = link_to image_tag('a004.png', class: "subimage" :height => "140" :width => "170"), 'material/product-img/a004.png' 
+                      = link_to image_tag('a004.png', class: "subimage" height: "140" width: "170"), 'material/product-img/a004.png' 
             .itembox__price
               %span.price ¥1000
               .itembox__tax
@@ -91,7 +91,7 @@
                 %tr
                   %th 発送元の地域
                   %td
-                    %a{:href => "#"} 北海道
+                    = link_to "北海道"
                 %tr
                   %th 発送日の目安
                   %td 1-2日で発送
@@ -102,17 +102,17 @@
                   お気に入り 0
               %ul.report
                 %li.reportbtn
-                  %a{:href => "#"}
+                  = link_to "/" do
                     = icon("fa", "flag")
                     不適切な商品の通報
         .commentbox
           %form.new-comment
-            %textarea{:cols => "90", :id => "", :name => "", :rows => "5"}
+            %textarea{cols: "90", id: "", name: "", rows: "5"}
             %p.noticemsg
               相手のことを考え丁寧なコメントを心がけましょう。
               %br
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
-            %buttun.commentbtn{:name => "button", :type => "submit"}
+            %buttun.commentbtn{name: "button", type: "submit"}
               = icon("fa", "comment")
               コメントする
       %ul.links
