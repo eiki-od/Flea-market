@@ -1,23 +1,9 @@
-!!!
-%html{:lang => "ja"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "UTF-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title Document
-    / css呼び出し
-    %link{:href => "Flea-market/app/assets/stylesheets_new/styles.css", :rel => "stylesheet_new"}/
-    %link{:href => "Flea-market/app/assets/stylesheets_new/reset.css", :rel => "stylesheet_new"}/
-    / FontAwesome呼び出し
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
-  
-  %body
     .wrap
       %header.search-bar
         / 検索バー
         .search-box
           .search-box-icon
-            %img.header-logo{:src => "material/logo/logo.png"}/
+            = link_to image_tag('logo.png', class: "header-logo"), 'material/logo/logo.png' 
           .search-box-text
             %form.input-form
               %input.search{:name => "search", :placeholder => "キーワードから探す", :type => "text"}/
@@ -26,35 +12,34 @@
         / navbar（カテゴリーetc）、トップイメージなど
         .search-nav
           %ul.left-lists
-            %li.category
-              %a{:href => "#"} 
-                %li.category カテゴリー
-              %a{:href => "#"}
-                %li.brand ブランド
+           %li
+            = link_to "カテゴリー", "#", class: "login"
+          %li
+            = link_to "ブランド", "#", class: "new"
           %ul.right-lists
-            %a{:href => "#"}
-              %li.login ログイン
-            %a{:href => "#"}
-              %li.new 新規会員登録
+          %li
+            = link_to "ログイン", "#", class: "login"
+          %li
+            = link_to "新規会員登録", "#", class: "new"
       / パンくずリスト
       %nav.bredcrumbs
         %ul
           %li
-            %a{:href => ""} furima
+            = link_to "furima", "#", class: ""
           %li
-            %i.fas.fa-chevron-right
+            = icon("fas", "chevron-right")
           %li
-            %a{:href => ""} ベビー・キッズ
+            = link_to "ベビー・キッズ", "#", class: ""
           %li
-            %i.fas.fa-chevron-right
+            = icon("fas", "chevron-right")
           %li
-            %a{:href => ""} ベビー服(男の子用)~95cm
+            = link_to "ベビー服(男の子用)~95cm", "#", class: ""
           %li
-            %i.fas.fa-chevron-right
+            = icon("fas", "chevron-right")
           %li
-            %a{:href => ""} アウター
+            = link_to "アウター", "#", class: ""
           %li
-            %i.fas.fa-chevron-right
+            = icon("fas", "chevron-right")
           %li
             %p ee
       / メイン画像〜商品詳細まで
@@ -65,12 +50,13 @@
             .itembox__body
               %ul
                 %li
-                  %img.main-image{:alt => "bigimg", :src => "material/product-img/IMG_9072.jpeg"}/
+                    = link_to image_tag('IMG_9072.jpeg', class: "main-image"), 'material/product-img/IMG_9072.jpeg' 
+
                   %ul.imgbox-small
                     %li
-                      %img.subimage{:alt => "smallimage", :height => "140", :src => "material/product-img/a001.png", :width => "170"}/
+                      = link_to image_tag('a001.png', class: "subimage" :height => "140" :width => "170"), 'material/product-img/a001.png' 
                     %li
-                      %img.subimage{:alt => "smallimage", :height => "140", :src => "material/product-img/a004.png", :width => "170"}/
+                      = link_to image_tag('a004.png', class: "subimage" :height => "140" :width => "170"), 'material/product-img/a004.png' 
             .itembox__price
               %span.price ¥1000
               .itembox__tax
@@ -85,11 +71,11 @@
                 %tr
                   %th カテゴリー
                   %td
-                    %a{:href => "#"} ベビー・キッズ
+                    = link_to "ベビー・キッズ", "#", class: ""
                     %br/
-                    %a{:href => "#"} ベビー服(男の子用)
+                    = link_to "ベビー服(男の子用)", "#", class: ""
                     %br/
-                    %a{:href => "#"} アウター
+                    = link_to "アウター", "#", class: ""
                 %tr
                   %th ブランド
                   %td
@@ -112,44 +98,45 @@
             .itembox__area
               %ul.likebtn-box
                 %li.likebtn
-                  %i.fas.fa-star
+                  = icon("fa", "star")
                   お気に入り 0
               %ul.report
                 %li.reportbtn
                   %a{:href => "#"}
-                    %i.fas.fa-flag
+                    = icon("fa", "flag")
                     不適切な商品の通報
         .commentbox
           %form.new-comment
             %textarea{:cols => "90", :id => "", :name => "", :rows => "5"}
             %p.noticemsg
               相手のことを考え丁寧なコメントを心がけましょう。
-              %br>/
+              %br
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
             %buttun.commentbtn{:name => "button", :type => "submit"}
-              %i.fa.fa-comment
+              = icon("fa", "comment")
               コメントする
       %ul.links
         %li
-          %a{:href => "#"}
-            %i.fa.fa-angle-left
+          = link_to "/" do
+            = icon("fa", "angle-left")
             %span 前の商品
         %li
-          %a{:href => "#"}
+          = link_to "/" do
             %span 後ろの商品
-            %i.fa.fa-angle-right
+            = icon("fa", "angle-right")
+          
       .recommended-items
-        %a{:href => "#"} ベビー・キッズをもっと見る
+        = link_to "ベビー・キッズをもっと見る", "/", class: "" 
         .recommended-items__lists
           .recommended-items__list
-            %img.prod-img{:alt => "", :src => "material/product-img/a007.png"}/
+          = link_to image_tag('a007.png', class: "prod-img"), 'material/product-img/a007.png' 
           .recommended-items__img
             %h3.prod-name ee
             .details
               %ul.money-box
                 %li.price 1000円
                 %li
-                  %i.fas.fa-star
+                  = icon("fa", "star")
                   0
               %p.tax (税込)
       / いますぐ無料ダウンロード
@@ -160,10 +147,12 @@
             %p 今すぐ無料ダウンロード！
             %div
               .content-btn
-                %a.app-btn{:href => "#"}
-                  %img.abtn{:src => "material/icon/app-store.svg"}/
-                %a.goo-btn{:href => "#"}
-                  %img.gbtn{:src => "material/icon/google-play.svg"}/
+                = link_to "#" ,class:goo-btn do
+                   = link_to image_tag('app-store.svg', class: "abtn"), 'material/icon/app-store.svg' 
+
+                = link_to "#" ,class:app-btn do
+                   = link_to image_tag('google-play.svg', class: "gbtn"), 'material/icon/google-play.svg' 
+
       / フッター
       #footer
         %ul.contents
@@ -171,35 +160,36 @@
             %h2.title-foot FURIMAについて
             %ul
               %li
-                %a{:href => "#"} 会社概要（運営会社）
+                = link_to "会社概要（運営会社）", "#", class: ""
               %li
-                %a{:href => "#"} プライバシーポリシー
+                = link_to "プライバシーポリシー", "#", class: ""
               %li
-                %a{:href => "#"} FURIMA利用契約
+                = link_to "FURIMA利用契約", "#", class: ""
               %li
-                %a{:href => "#"} ポイントに関する特約
+                = link_to "ポイントに関する特約", "#", class: ""
           %li.content
             %h2.title-foot FURIMAを見る
             %ul
               %li
-                %a{:href => "#"} カテゴリー一覧
+                = link_to "カテゴリー一覧", "#", class: ""
               %li
-                %a{:href => "#"} ブランド一覧ー
+                = link_to "ブランド一覧", "#", class: "" 
           %li.content
             %h2.title-foot ヘルプ＆ガイド
             %ul
               %li
-                %a{:href => "#"} FURIMAガイド
+                = link_to "FURIMAガイド", "#", class: "" 
               %li
-                %a{:href => "#"} FURIMAロゴ利用ガイドライン
+                = link_to "FURIMAロゴ利用ガイドライン", "#", class: "" 
               %li
-                %a{:href => "#"} お知らせ
+                = link_to "お知らせ", "#", class: "" 
         .logo-foot
-          %a{:href => "#"}
-            %img.biglogo{:alt => "logo", :src => "material/logo/logo-white.png"}/
-        %p.minilogo © FURIMA
-      / 出品アイコン
-      %a{:href => "#"}
-        .purchase-box
-          %span.purchase-text 出品する
-          %img.camera-image{:alt => "camera", :src => "material/icon/icon_camera.png"}/
+          = link_to "#" do
+          = image_tag('logo-white.png'), 'material/logo/logo-white.png' 
+        %p.minilogo © FURIMA      
+         
+      .purchase-box
+        = link_to "#" do
+          %span.purchase-text 
+            出品する
+          = image_tag('camera.png'), 'material/icon/icon_camera.png' 
