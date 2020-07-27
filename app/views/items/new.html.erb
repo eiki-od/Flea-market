@@ -19,7 +19,7 @@
       <!-- 検索バー -->
       <div class="search-box">
         <div class="search-box-icon">
-          <img src="app/assets/stylesheets_new/material/logo/logo.png" class="header-logo">
+          <%=image_tag 'app/assets/stylesheets_new/material/logo/logo.png',:class="header-logo" %>
         </div>
         <div class="search-box-text">
           <form class="input-form">
@@ -34,7 +34,7 @@
       <div class="search-nav">
         <ul class="left-lists">
           <li class="category">
-            <a href="#">カテゴリー</a>
+            <%= link_to "カテゴリー","#" %>>
             <!-- マウスオーバー記述中 -->
             <!-- <div class="category-pulldown">
               <ul class="categorytree">
@@ -62,25 +62,25 @@
     <nav class="bredcrumbs">
       <ul>
         <li>
-          <a href="">furima</a>
+          <%= link_to "furima","#" %>
         </li>
         <li>
           <i class="fas fa-chevron-right"></i>
         </li>
         <li>
-          <a href="">ベビー・キッズ</a>
+          <%= link_to "ベビー・キッズ","#" %>
         </li>
         <li>
           <i class="fas fa-chevron-right"></i>
         </li>
         <li>
-          <a href="">ベビー服(男の子用)~95cm</a>
+          <%= link_to "ベビー服(男の子用)~95cm","#" %>
         </li>
         <li>
           <i class="fas fa-chevron-right"></i>
         </li>
         <li>
-          <a href="">アウター</a>
+          <%= link_to "アウター","#" %>
         </li>
         <li>
           <i class="fas fa-chevron-right"></i>
@@ -99,13 +99,13 @@
           <div class="itembox__body">
             <ul>
               <li>
-                <img src="app/assets/stylesheets_new/material/product-img/IMG_9072.jpeg" alt="bigimg" class="main-image">
+                <%=image_tag 'app/assets/stylesheets_new/material/product-img/IMG_9072.jpeg',:class="main-image" alt=>"bigimg" height="140"width="170"%>
                 <ul class="imgbox-small">
                   <li>
-                    <img src="app/assets/stylesheets_new/material/product-img/a001.png" alt="smallimage" height="140"width="170" class="subimage">
+                    <%=image_tag 'app/assets/stylesheets_new/material/product-img/a001.png',:class="subimage" alt=>"smallimage" height="140"width="170"%>
                   </li>
                   <li>
-                    <img src="app/assets/stylesheets_new/material/product-img/a004.png" alt="smallimage" height="140"width="170" class="subimage">
+                    <%=image_tag 'app/assets/stylesheets_new/material/product-img/a004.png',:class="subimage" alt=>"smallimage" height="140"width="170"%>
                   </li>
                 </ul>
               </li>
@@ -127,11 +127,11 @@
               <tr>
                 <th>カテゴリー</th>
                 <td>
-                  <a href="#">ベビー・キッズ</a>
+                  <%= link_to "ベビー・キッズ","#" %>
                   <br>
-                  <a href="#">ベビー服(男の子用)</a>
+                  <%= link_to "ベビー服(男の子用)","#" %>
                   <br>
-                  <a href="#">アウター</a>
+                  <%= link_to "アウター","#" %>
                 </td>
               </tr>
               <tr>
@@ -207,10 +207,10 @@
       </li>
     </ul>
     <div class="recommended-items">
-      <a href="#">ベビー・キッズをもっと見る</a>
+      <%= link_to "ベビー・キッズをもっと見る","#" %>
       <div class="recommended-items__lists">
         <div class="recommended-items__list">
-          <img src="app/assets/stylesheets_new/material/product-img/a007.png" alt="" class="prod-img">
+          <%=image_tag 'app/assets/stylesheets_new/material/product-img/a007.png',:class="prod-img"%>
         </div>
         <div class="recommended-items__img">
           <h3 class="prod-name">ee</h3>
@@ -237,10 +237,10 @@
         <div>
           <div class="content-btn">
             <a class="app-btn" href="#">
-              <img src="material/icon/app-store.svg" class="abtn">
+              <%=image_tag 'material/icon/app-store.svg',:class="abtn"%>
             </a>
             <a class="goo-btn" href="#">
-              <img src="material/icon/google-play.svg" class="gbtn">
+              <%=image_tag 'material/icon/google-play.svg',:class="gbtn"%>
             </a>
           </div>
         </div>
@@ -254,41 +254,41 @@
         <li class="content">
           <h2 class="title-foot">FURIMAについて</h2>
           <ul>
-            <li><a href="#">会社概要（運営会社）</a></li>
-            <li><a href="#">プライバシーポリシー</a></li>
-            <li><a href="#">FURIMA利用契約</a></li>
-            <li><a href="#">ポイントに関する特約</a></li>
+            <li><%= link_to "会社概要（運営会社）","#" %></li>
+            <li><%= link_to "プライバシーポリシー","#" %></li>
+            <li><%= link_to "FURIMA利用契約","#" %></li>
+            <li><%= link_to "ポイントに関する特約","#" %></li>
           </ul>
         </li>
         <li class="content">
-          <h2 class="title-foot">FURIMAを見る</h2>
+          <h2 class="title-foot">FURIMAを見る</h2> 
           <ul>
-            <li><a href="#">カテゴリー一覧</a></li>
-            <li><a href="#">ブランド一覧ー</a></li>
+            <li><%= link_to "カテゴリー一覧","#" %></li>
+            <li><%= link_to "ブランド一覧","#" %></li>
           </ul>
         </li>
         <li class="content">
           <h2 class="title-foot">ヘルプ＆ガイド</h2>
           <ul>
-            <li><a href="#">FURIMAガイド</a></li>
-            <li><a href="#">FURIMAロゴ利用ガイドライン</a></li>
-            <li><a href="#">お知らせ</a></li>
+            <li><%= link_to "FURIMAガイド","#" %></li>
+            <li><%= link_to "FURIMAロゴ利用ガイドライン","#" %></li>
+            <li><%= link_to "お知らせ","#" %></li>
           </ul>
         </li>
       </ul>
       <div class="logo-foot">
-        <a href="#">
-          <img src="app/assets/stylesheets_new/material/logo/logo-white.png" alt="logo" class=biglogo>
+        <%=link_to "#"%>
+        <%=image_tag 'app/assets/stylesheets_new/material/logo/logo-white.png',:class="biglogo", alt=>"logo"%>
         </a>
       </div>
       <p class="minilogo">© FURIMA</p>
     </div>
 
 <!-- 出品アイコン -->
-  <a href="#">
+  <%= link_to "#" %>
     <div class="purchase-box">
         <span class="purchase-text">出品する</span>
-        <img src="app/assets/stylesheets_new/material/icon/icon_camera.png" alt="camera" class="camera-image">
+        <%=image_tag 'app/assets/stylesheets_new/material/icon/icon_camera.png',:class="camera-image", alt=>"camera"%>
     </div>
   </a>
 
