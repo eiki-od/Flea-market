@@ -34,26 +34,20 @@
       <div class="search-nav">
         <ul class="left-lists">
           <li class="category">
-            <%= link_to "カテゴリー","#" %>>
-            <!-- マウスオーバー記述中 -->
-            <!-- <div class="category-pulldown">
-              <ul class="categorytree">
-                <li class="categorytree-item">
-                  <a class="1" href="#">レディース</a>
-                </li>
-                <li class="categorytree-item">
-                  <a class="2" href="#">メンズ</a>
-                </li>
-
-              </ul>
-            </div>
-
-          </li> -->
-          <a href="#"><li class="brand">ブランド</li></a>
+           <%= link_to "/" do %>
+            <li class="brand">カテゴリー</li>
+          <% end %>
+          <%= link_to "/" do %>
+            <li class="brand">ブランド</li>
+          <% end %>
         </ul>
         <ul class="right-lists">
-          <a href="#"><li class="login">ログイン</li></a>
-          <a href="#"><li class="new">新規会員登録</li></a>
+          <%= link_to "/" do %>
+            <li class="login">ログイン</li>
+          <% end %>
+          <%= link_to "/" do %>
+            <li class="new">新規会員登録</li>
+          <% end %>
         </ul>
       </div>
     </header>
@@ -153,7 +147,7 @@
               <tr>
                 <th>発送元の地域</th>
                 <td>
-                  <a href="#">北海道</a>
+                  <%= link_to "北海道", "#" %>
                 </td>
               </tr>
               <tr>
@@ -171,10 +165,10 @@
             </ul>
             <ul class="report">
               <li class="reportbtn">
-                <a href="#">
+                <%= link_to "#" do %>
                   <i class="fas fa-flag"></i>
                   不適切な商品の通報
-                </a>
+                <% end %>
               </li>
             </ul>
           </div>
@@ -194,16 +188,16 @@
     </div>
     <ul class="links">
       <li>
-        <a href="#">
+        <%= link_to "#" do%>
           <i class="fa fa-angle-left"></i>
           <span>前の商品</span>
-        </a>
+        <%end%>
       </li>
       <li>
-        <a href="#">
+        <%= link_to "#" do%>
           <span>後ろの商品</span>
           <i class="fa fa-angle-right"></i>
-        </a>
+        <%end%>
       </li>
     </ul>
     <div class="recommended-items">
@@ -236,12 +230,8 @@
         <p>今すぐ無料ダウンロード！</p>
         <div>
           <div class="content-btn">
-            <a class="app-btn" href="#">
-              <%=image_tag 'material/icon/app-store.svg',:class="abtn"%>
-            </a>
-            <a class="goo-btn" href="#">
-              <%=image_tag 'material/icon/google-play.svg',:class="gbtn"%>
-            </a>
+          <%=link_to image_tag('app-store.svg', class:"abtn"),'material/icon/app-store.svg'%>
+          <%=link_to image_tag('google-play.svg', class:"gbtn"),'material/icon/google-play.svg'%>
           </div>
         </div>
       </div>
@@ -277,20 +267,20 @@
         </li>
       </ul>
       <div class="logo-foot">
-        <%=link_to "#"%>
+        <%= link_to( "#", class:'') do%>
         <%=image_tag 'app/assets/stylesheets_new/material/logo/logo-white.png',:class="biglogo", alt=>"logo"%>
-        </a>
+        <% end %>
       </div>
       <p class="minilogo">© FURIMA</p>
     </div>
 
 <!-- 出品アイコン -->
-  <%= link_to "#" %>
+  <%= link_to( "#", class:'') do%>
     <div class="purchase-box">
         <span class="purchase-text">出品する</span>
         <%=image_tag 'app/assets/stylesheets_new/material/icon/icon_camera.png',:class="camera-image", alt=>"camera"%>
     </div>
-  </a>
+  <% end %>
 
   </div>
   </body>
