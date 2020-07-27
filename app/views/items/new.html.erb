@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css呼び出し -->
+    <link rel="stylesheet_new" href="Flea-market/app/assets/stylesheets_new/styles.css">
+    <link rel="stylesheet_new" href="Flea-market/app/assets/stylesheets_new/reset.css">
+    <!-- FontAwesome呼び出し -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  </head>
+
+
+  <body>
+    <div class="wrap">
+
+    <header class="search-bar">
+      <!-- 検索バー -->
+      <div class="search-box">
+        <div class="search-box-icon">
+          <img src="app/assets/stylesheets_new/material/logo/logo.png" class="header-logo">
+        </div>
+        <div class="search-box-text">
+          <form class="input-form">
+            <input class="search" type="text" name="search"  placeholder="キーワードから探す" class="inputform">
+            <div class="submit-icon" >
+              <input class="submitbtn" type="image" name="submit" src="app/assets/stylesheets_new/material/icon/icon-search1.png"> 
+            </div> 
+          </form>
+        </div>
+      </div>
+      <!-- navbar（カテゴリーetc）、トップイメージなど -->
+      <div class="search-nav">
+        <ul class="left-lists">
+          <li class="category">
+            <a href="#">カテゴリー</a>
+            <!-- マウスオーバー記述中 -->
+            <!-- <div class="category-pulldown">
+              <ul class="categorytree">
+                <li class="categorytree-item">
+                  <a class="1" href="#">レディース</a>
+                </li>
+                <li class="categorytree-item">
+                  <a class="2" href="#">メンズ</a>
+                </li>
+
+              </ul>
+            </div>
+
+          </li> -->
+          <a href="#"><li class="brand">ブランド</li></a>
+        </ul>
+        <ul class="right-lists">
+          <a href="#"><li class="login">ログイン</li></a>
+          <a href="#"><li class="new">新規会員登録</li></a>
+        </ul>
+      </div>
+    </header>
+    
+<!-- パンくずリスト -->
+    <nav class="bredcrumbs">
+      <ul>
+        <li>
+          <a href="">furima</a>
+        </li>
+        <li>
+          <i class="fas fa-chevron-right"></i>
+        </li>
+        <li>
+          <a href="">ベビー・キッズ</a>
+        </li>
+        <li>
+          <i class="fas fa-chevron-right"></i>
+        </li>
+        <li>
+          <a href="">ベビー服(男の子用)~95cm</a>
+        </li>
+        <li>
+          <i class="fas fa-chevron-right"></i>
+        </li>
+        <li>
+          <a href="">アウター</a>
+        </li>
+        <li>
+          <i class="fas fa-chevron-right"></i>
+        </li>
+        <li>
+          <p>ee</p>
+        </li>
+      </ul>
+
+    </nav>
+<!-- メイン画像〜商品詳細まで -->  
+    <div id="main">
+      <div class="content">
+        <div class="itembox">
+          <h2 class="itembox__name">ee</h2>
+          <div class="itembox__body">
+            <ul>
+              <li>
+                <img src="app/assets/stylesheets_new/material/product-img/IMG_9072.jpeg" alt="bigimg" class="main-image">
+                <ul class="imgbox-small">
+                  <li>
+                    <img src="app/assets/stylesheets_new/material/product-img/a001.png" alt="smallimage" height="140"width="170" class="subimage">
+                  </li>
+                  <li>
+                    <img src="app/assets/stylesheets_new/material/product-img/a004.png" alt="smallimage" height="140"width="170" class="subimage">
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="itembox__price">
+            <span class="price">¥1000</span>
+            <div class="itembox__tax">
+              <span>(税込)</span><span>送料込み</span>
+            </div>
+          </div>
+          <h2 class="itembox__text">EEE</h2>
+          <div class="itembox__detail">
+            <table>
+              <tr>
+                <th>出品者</th>
+                <td>ss</td>
+              </tr>
+              <tr>
+                <th>カテゴリー</th>
+                <td>
+                  <a href="#">ベビー・キッズ</a>
+                  <br>
+                  <a href="#">ベビー服(男の子用)</a>
+                  <br>
+                  <a href="#">アウター</a>
+                </td>
+              </tr>
+              <tr>
+                <th>ブランド</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th>商品のサイズ</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th>商品の状態</th>
+                <td>新品/未使用</td>
+              </tr>
+              <tr>
+                <th>配送料の負担</th>
+                <td>送料込み(出品者負担)</td>
+              </tr>
+              <tr>
+                <th>発送元の地域</th>
+                <td>
+                  <a href="#">北海道</a>
+                </td>
+              </tr>
+              <tr>
+                <th>発送日の目安</th>
+                <td>1-2日で発送</td>
+              </tr>
+            </table>
+          </div>
+          <div class="itembox__area">
+            <ul class="likebtn-box">
+              <li class="likebtn">
+                <i class="fas fa-star"></i>
+                お気に入り 0
+              </li>
+            </ul>
+            <ul class="report">
+              <li class="reportbtn">
+                <a href="#">
+                  <i class="fas fa-flag"></i>
+                  不適切な商品の通報
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="commentbox">
+        <form class="new-comment" >
+        <textarea name="" id="" cols="90" rows="5"></textarea>
+        <p class="noticemsg">相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。</p>
+        <buttun name="button" type="submit" class="commentbtn" >
+          <i class="fa fa-comment"></i>
+          コメントする
+        </buttun>
+        </form>
+      </div>
+    </div>
+    <ul class="links">
+      <li>
+        <a href="#">
+          <i class="fa fa-angle-left"></i>
+          <span>前の商品</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>後ろの商品</span>
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="recommended-items">
+      <a href="#">ベビー・キッズをもっと見る</a>
+      <div class="recommended-items__lists">
+        <div class="recommended-items__list">
+          <img src="app/assets/stylesheets_new/material/product-img/a007.png" alt="" class="prod-img">
+        </div>
+        <div class="recommended-items__img">
+          <h3 class="prod-name">ee</h3>
+          <div class="details">
+            <ul class="money-box">
+              <li class="price">1000円</li>
+              <li>
+                <i class="fas fa-star"></i>
+                0
+              </li>
+            </ul>
+            <p class="tax">(税込)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- いますぐ無料ダウンロード -->
+    <div id="bottom-ad">
+      <div class="bottom-picture">
+        <div class="bottom-picture-box">
+        <h2>だれでもかんたん、人生を変えるフリマアプリ</h2>
+        <p>今すぐ無料ダウンロード！</p>
+        <div>
+          <div class="content-btn">
+            <a class="app-btn" href="#">
+              <img src="material/icon/app-store.svg" class="abtn">
+            </a>
+            <a class="goo-btn" href="#">
+              <img src="material/icon/google-play.svg" class="gbtn">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+<!-- フッター -->
+    <div id="footer">
+      <ul class="contents">
+        <li class="content">
+          <h2 class="title-foot">FURIMAについて</h2>
+          <ul>
+            <li><a href="#">会社概要（運営会社）</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">FURIMA利用契約</a></li>
+            <li><a href="#">ポイントに関する特約</a></li>
+          </ul>
+        </li>
+        <li class="content">
+          <h2 class="title-foot">FURIMAを見る</h2>
+          <ul>
+            <li><a href="#">カテゴリー一覧</a></li>
+            <li><a href="#">ブランド一覧ー</a></li>
+          </ul>
+        </li>
+        <li class="content">
+          <h2 class="title-foot">ヘルプ＆ガイド</h2>
+          <ul>
+            <li><a href="#">FURIMAガイド</a></li>
+            <li><a href="#">FURIMAロゴ利用ガイドライン</a></li>
+            <li><a href="#">お知らせ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="logo-foot">
+        <a href="#">
+          <img src="app/assets/stylesheets_new/material/logo/logo-white.png" alt="logo" class=biglogo>
+        </a>
+      </div>
+      <p class="minilogo">© FURIMA</p>
+    </div>
+
+<!-- 出品アイコン -->
+  <a href="#">
+    <div class="purchase-box">
+        <span class="purchase-text">出品する</span>
+        <img src="app/assets/stylesheets_new/material/icon/icon_camera.png" alt="camera" class="camera-image">
+    </div>
+  </a>
+
+  </div>
+  </body>
+
+</html>
