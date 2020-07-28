@@ -36,8 +36,10 @@
           <a href="#"><li class="brand">ブランド</li></a>
         </ul>
         <ul class="right-lists">
-          <a href="#"><li class="login">ログイン</li></a>
-          <a href="#"><li class="new">新規会員登録</li></a>
+          <%# <a href="#"><li class="login">ログイン</li></a> %>
+          <%= link_to "ログイン", "#", class: "login" %>
+          <%# <a href="#"><li class="new">新規会員登録</li></a> %>
+          <%= link_to "新規会員登録", "#", class: "new" %>
         </ul>
       </div>
       <div class="picture">
