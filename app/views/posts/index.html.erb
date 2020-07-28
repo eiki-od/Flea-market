@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- css呼び出し -->
-    <link rel="stylesheet" href="app/assets/stylesheets/styles.css">
-    <link rel="stylesheet" href="app/assets/stylesheets/reset.css">
+    <%# <link rel="stylesheet" href="app/assets/stylesheets/styles.css">
+    <link rel="stylesheet" href="app/assets/stylesheets/reset.css"> %>
     <!-- FontAwesome呼び出し -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
@@ -17,12 +17,13 @@
       <!-- 検索バー -->
       <div class="search-box">
         <div class="search-box-icon">
-          <img src="app/assets/material/logo/logo.png" class="header-logo">
+          <%= image_tag('material/logo/logo.png',class:"header-logo") %>
         </div>
         <div class="search-box-text">
           <form class="input-form">
             <input class="search" type="text" name="search"  placeholder="キーワードから探す" class="inputform">
             <div class="submit-icon" >
+              <%= form.submit '投稿する' %>
               <input class="submitbtn" type="image" name="submit" src="app/assets/material/icon/icon-search1.png"> 
             </div> 
           </form>
@@ -33,20 +34,6 @@
         <ul class="left-lists">
           <li class="category">
             <a href="#">カテゴリー</a>
-            <!-- マウスオーバー記述中 -->
-            <!-- <div class="category-pulldown">
-              <ul class="categorytree">
-                <li class="categorytree-item">
-                  <a class="1" href="#">レディース</a>
-                </li>
-                <li class="categorytree-item">
-                  <a class="2" href="#">メンズ</a>
-                </li>
-
-              </ul>
-            </div>
-
-          </li> -->
           <a href="#"><li class="brand">ブランド</li></a>
         </ul>
         <ul class="right-lists">
@@ -60,13 +47,12 @@
         <p>FURIMAはだれでもかんたんに出品・購入できる<br>フリマアプリです</p>
         <div>
           <div class="content-btn">
-            <a class="app-btn" href="#">
-              <img src="app/assets/material/icon/app-store.svg" class="abtn">
-            </a>
-            <a class="goo-btn" href="#">
-              <img src="app/assets/material/icon/google-play.svg" class="gbtn">
-            </a>
-
+            <%= link_to "#" do %>
+              <%= image_tag('material/icon/app-store.svg',class:"abtn") %>
+            <% end %>
+            <%= link_to "#" do %>
+              <%= image_tag('material/icon/google-play.svg',class:"gbtn") %>
+            <% end %>
           </div>
         </div>
         </div>
