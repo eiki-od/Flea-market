@@ -25,7 +25,7 @@
         <%= form_with url: "#", method: :post, class:"input-form",local: true do |form|  %>
           <%= form.text_field :content ,class:"search",placeholder: 'キーワードから探す'%>
           <%= form.label :submitbtn ,class:"submitbtn" do%>
-            <%# <%= icon('fas', 'search',class:"seacrhicon") %> %>
+            <%= icon('fas', 'search',class:"seacrhicon") %>
             <%= form.submit id:"submitbtn",class:"sbtn"%>
           <% end %>
         <% end %>

@@ -1,1 +1,25 @@
-<h1>商品出品ページ</h1>
+  <div class="container">
+    <%= form_with(model: @post, local: true) do |form| %>
+      <%= form.file_field :image, placeholder: "Image Url" %>
+      <p>商品名</p>
+      <%= form.text_field :name, placeholder: "40文字まで" %>
+      <p>商品の説明</p>
+      <%= form.text_area :about, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "10" %>
+      <p>ブランド<span>任意</span></p>
+      <%= form.text_field :brand, placeholder: "例）シャネル" %>
+      <p>商品の状態</p>
+      <%= form.select :status, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3 ] ,["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態が悪い", 6] ], prompt: "選択してください", class: "hoge" %>
+      <p>配送について</p>
+      <p>配送料の負担</p>
+      <%= form.select :status, [ ["送料込み（出品者負担）",1], ["着払い（購入者負担）", 2]], prompt: "選択してください", class: "hoge" %>
+      <p>発送元の地域</p>
+      <%= form.select :status, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 3 ]], prompt: "選択してください", class: "hoge" %>
+      <p>発送までの日数</p>
+      <%= form.select :status, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 3 ]], prompt: "選択してください", class: "hoge" %>
+      <p>価格（¥300〜9,999,999）</p>
+    <p>販売価格</p>
+    ¥<%= form.number_field :image%>
+    <p>販売手数料（10%）</p>
+    <p>販売利益</p>
+    <% end %>
+  </div>
