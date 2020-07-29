@@ -1,4 +1,5 @@
 %h2 Sign up
+
 = form_for(@user, url: user_registration_path) do |f|
   = render "devise/shared/error_messages", resource: @user
   .field
@@ -46,4 +47,5 @@
     = f.text_field :phone
   .actions
     = f.submit "Next"
+
 = render "devise/shared/links"
