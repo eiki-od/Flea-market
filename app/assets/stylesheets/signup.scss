@@ -1,0 +1,64 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.Header {
+  height: 128px;
+  text-align: center;
+  background-color: whitesmoke;
+  .header-logo {
+    width: 200px;
+    height: 60px;
+    margin: 40px 0 0;
+  }
+}
+
+.Main {
+  background-color: whitesmoke;
+  &__section {
+    width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    &__inputs {
+      font-size: 25px;
+      padding: 30px;
+      text-align: center;
+      margin: auto;
+      max-width: 340px;
+      background-color: white;
+      border-bottom: medium solid whitesmoke;
+    }
+    &__input {
+      padding: 0px 40px;
+      background-color: white;
+      &__content {
+        max-width: 340px;
+        margin: auto;
+        }
+      }
+    }
+  }
+.field {
+  font-size: 20px;
+  margin: 8px 0;
+  &__input {
+    font-size: 20px;
+    height: 25px;
+    padding: 10px 16px 8px;
+    width: 90%;
+  }
+}
+span {
+  background-color: red;
+  color: white;
+  font-size: 15px;
+}
+.next {
+  width: 100%;
+  margin: 40px 0px 60px 0px;
+  color: white;
+  line-height: 48px;
+  background-color: red;
+  text-decoration: none;
+}
