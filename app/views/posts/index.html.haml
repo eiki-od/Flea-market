@@ -28,14 +28,11 @@
               = link_to "カテゴリー", "#", class: "login"
               = link_to "ブランド", "#", class: "login"
           %ul.right-lists
-
-          - if user_signed_in?
-            %h2 ログインしています
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
-          - else
-            %h2 ログインしていません
-            = link_to "新規登録", new_user_registration_path, class: "login"
-            = link_to "ログイン", new_user_session_path, class: "new"
+            - if user_signed_in?
+              = link_to "マイページ", destroy_user_session_path, method: :delete
+            - else
+              = link_to "新規登録", new_user_registration_path, class: "login"
+              = link_to "ログイン", new_user_session_path, class: "new"
 
         .picture
           .picture-box
