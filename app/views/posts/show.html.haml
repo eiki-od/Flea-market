@@ -1,0 +1,196 @@
+.wrap
+  %header.search-bar
+    / 検索バー
+    .search-box
+      .search-box-icon
+        = image_tag('material/logo/logo.png',class:"header-logo")
+      .search-box-text
+        = form_with url: "#", method: :post, class:"input-form",local: true do |form|
+          = form.text_field :content ,class:"search",placeholder: 'キーワードから探す'
+          = form.label :submitbtn ,class:"submitbtn" do
+            = icon('fas', 'search',class:"seacrhicon")
+            = form.submit id:"submitbtn",class:"sbtn"
+    / navbar（カテゴリーetc）、トップイメージなど
+    .search-nav
+      %ul.left-lists
+        %li.category
+          %a{:href => "#"} カテゴリー
+          %a{:href => "#"}
+            %li.brand ブランド
+      %ul.right-lists
+        %a{:href => "#"}
+          %li.login ログイン
+        %a{:href => "#"}
+          %li.new 新規会員登録
+  / パンくずリスト
+  %nav.bredcrumbs
+    %ul
+      %li
+        %a{:href => ""} furima
+      %li
+        %i.fas.fa-chevron-right
+      %li
+        %a{:href => ""} ベビー・キッズ
+      %li
+        %i.fas.fa-chevron-right
+      %li
+        %a{:href => ""} ベビー服(男の子用)~95cm
+      %li
+        %i.fas.fa-chevron-right
+      %li
+        %a{:href => ""} アウター
+      %li
+        %i.fas.fa-chevron-right
+      %li
+        %p ee
+  / メイン画像〜商品詳細まで
+  #main
+    .content
+      .itembox
+        %h2.itembox__name ee
+        .itembox__body
+          %ul
+            %li
+              -# = image_tag('material/product-img/IMG_9072.jpeg',class:"main-image")
+              %ul.imgbox-small
+                %li
+                  = image_tag('material/product-img/a001.png' ,class:"subimage" ,height:"140" ,width:"170")
+                %li
+                  = image_tag('material/product-img/a004.png' ,class:"subimage" ,height:"140" ,width:"170")
+        .itembox__price
+          %span.price ¥1000
+          .itembox__tax
+            %span (税込)
+            %span 送料込み
+        %h2.itembox__text EEE
+        .itembox__detail
+          %table
+            %tr
+              %th 出品者
+              %td ss
+            %tr
+              %th カテゴリー
+              %td
+                %a{:href => "#"} ベビー・キッズ
+                %br/
+                %a{:href => "#"} ベビー服(男の子用)
+                %br/
+                %a{:href => "#"} アウター
+            %tr
+              %th ブランド
+              %td
+            %tr
+              %th 商品のサイズ
+              %td
+            %tr
+              %th 商品の状態
+              %td 新品/未使用
+            %tr
+              %th 配送料の負担
+              %td 送料込み(出品者負担)
+            %tr
+              %th 発送元の地域
+              %td
+                %a{:href => "#"} 北海道
+            %tr
+              %th 発送日の目安
+              %td 1-2日で発送
+        .itembox__area
+          %ul.likebtn-box
+            %li.likebtn
+              %i.fas.fa-star
+              お気に入り 0
+          %ul.report
+            %li.reportbtn
+              %a{:href => "#"}
+                %i.fas.fa-flag
+                不適切な商品の通報
+    .commentbox
+      %form.new-comment
+        %textarea{:cols => "90", :id => "", :name => "", :rows => "5"}
+        %p.noticemsg
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br>/
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %buttun.commentbtn{:name => "button", :type => "submit"}
+          %i.fa.fa-comment
+          コメントする
+  %ul.links
+    %li
+      %a{:href => "#"}
+        %i.fa.fa-angle-left
+        %span 前の商品
+    %li
+      %a{:href => "#"}
+        %span 後ろの商品
+        %i.fa.fa-angle-right
+  .recommended-items
+    %a{:href => "#"} ベビー・キッズをもっと見る
+    .recommended-items__lists
+      .recommended-items__list
+        -# = image_tag('material/product-img/IMG_9072.jpeg',class:"prod-img")
+      .recommended-items__img
+        %h3.prod-name ee
+        .details
+          %ul.money-box
+            %li.price 1000円
+            %li
+              %i.fas.fa-star
+              0
+          %p.tax (税込)
+  / いますぐ無料ダウンロード
+  #bottom-ad
+    .bottom-picture
+      .bottom-picture-box
+        %h2 だれでもかんたん、人生を変えるフリマアプリ
+        %p 今すぐ無料ダウンロード！
+        %div
+          .content-btn
+            = link_to "#" do
+              = image_tag('material/icon/app-store.svg',class:"abtn")
+            = link_to "#" do
+              = image_tag('material/icon/google-play.svg',class:"gbtn")
+  / フッター
+  #footer
+    %ul.contents
+      %li.content
+        %h2.title-foot FURIMAについて
+        %ul
+          %li
+            %a{:href => "#"} 会社概要（運営会社）
+          %li
+            %a{:href => "#"} プライバシーポリシー
+          %li
+            %a{:href => "#"} FURIMA利用契約
+          %li
+            %a{:href => "#"} ポイントに関する特約
+      %li.content
+        %h2.title-foot FURIMAを見る
+        %ul
+          %li
+            %a{:href => "#"} カテゴリー一覧
+          %li
+            %a{:href => "#"} ブランド一覧ー
+      %li.content
+        %h2.title-foot ヘルプ＆ガイド
+        %ul
+          %li
+            %a{:href => "#"} FURIMAガイド
+          %li
+            %a{:href => "#"} FURIMAロゴ利用ガイドライン
+          %li
+            %a{:href => "#"} お知らせ
+    .logo-foot
+      = link_to "#" do
+        = image_tag('material/logo/logo-white.png',class:"biglogo")
+    %p.minilogo © FURIMA
+  / 出品アイコン
+  = link_to "#" do
+    .purchase-box
+      %span.purchase-text 出品する
+      = image_tag('material/icon/icon_camera.png',class:"camera-image")
+  
+  = link_to '削除', post_path(@post.id), method: :delete
+-# showアクションにdestoryの記述をすれば、１９３行目は動く。▶︎記述はあっていると思う。
+-# destoryアクションにdestoryの記述をすると、１９３行目がエラーになる。
+
