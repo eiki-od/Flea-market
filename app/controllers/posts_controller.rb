@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
   def index
-    @posts = Post.all
+    @post
     @posts = Post.includes(:images).order('created_at DESC')
   end
 
@@ -19,22 +19,17 @@ class PostsController < ApplicationController
     end
   end
   
-  private
   
-  def post_params
-    params.require(:post).permit(images_attributes: [:src])
-  end
-
   def set_product
     @post = Post.find(params[:id])
   end
-
+  
   def show
   end
-
+  
   def edit
   end
-
+  
   def update
     if @post.update(product_params)
       redirect_to root_path
@@ -42,8 +37,13 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-
+  
   def destroy
   end
   
+  private
+  
+  def post_params
+    params.require(:post).permit(images_attributes: [:src])
+  end
 end
