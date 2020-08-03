@@ -1,0 +1,30 @@
+.Header
+  .Header__single
+    = image_tag('material/logo/logo.png',class:"header-logo")
+.Main
+  .Main__section
+    .Main__section__inputs
+      %h2 住所入力
+    .Main__section__input
+      .Main__section__input__content
+        = form_for @address do |f|
+          = render "devise/shared/error_messages", resource: @address
+          .field
+            = f.label :"郵便番号"
+            %br/
+            = f.text_field :postal_code, class: "field__input", placeholder: "例）OOOXXXX"
+          .field
+            = f.label :"都道府県"
+            %br/
+            = f.text_field :prefecture_id, class: "field__input", placeholder: "例）福岡県"
+          .field
+            = f.label :"市区町村名"
+            %br/
+            = f.text_field :city, class: "field__input", placeholder: "例）福岡市"
+          .field
+            = f.label :"番地名"
+            %br/
+            = f.text_field :street, class: "field__input", placeholder: "例）和白区12３番地"
+          .actions
+            = f.submit "登録する", {class: "next"}
+            -# = render "devise/shared/links"
