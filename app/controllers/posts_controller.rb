@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
   def index
-    @post
     @posts = Post.includes(:images).order('created_at DESC')
   end
 
