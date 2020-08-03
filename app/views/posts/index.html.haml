@@ -28,8 +28,12 @@
               = link_to "カテゴリー", "#", class: "login"
               = link_to "ブランド", "#", class: "login"
           %ul.right-lists
-            = link_to "ログイン", "#", class: "login"
-            = link_to "新規会員登録", "#", class: "new"
+            - if user_signed_in?
+              = link_to "マイページ", destroy_user_session_path, method: :delete
+            - else
+              = link_to "新規登録", new_user_registration_path, class: "login"
+              = link_to "ログイン", new_user_session_path, class: "new"
+
         .picture
           .picture-box
             %h2 人生を変えるフリマアプリ
@@ -50,7 +54,7 @@
           %li.list
             .list-pic
               %span.number 1
-              = image_tag('material/pict/pict-reason-01.jpg', class:"list-img")
+              = image_tag('material/pict/pict-reason-01.png', class:"list-img")
             %h2.list-text
               %span 3分
               ですぐに出品
@@ -58,7 +62,7 @@
           %li.list
             .list-pic
               %span.number 2
-              = image_tag('material/pict/pict-reason-02.jpg', class:"list-img")
+              = image_tag('material/pict/pict-reason-02.png', class:"list-img")
             %h2.list-text
               %span シンプル
               で使いやすい
@@ -66,7 +70,7 @@
           %li.list
             .list-pic
               %span.number 3
-              = image_tag('material/pict/pict-reason-03.jpg', class:"list-img")
+              = image_tag('material/pict/pict-reason-03.png', class:"list-img")
             %h2.list-text
               手数料
               %span 業界最安
@@ -117,7 +121,7 @@
             .list-new
               = link_to "#" do
                 %figure.img-new
-                  = image_tag('material/product-img/IMG_9072.jpeg',class:"prod-img")
+                  = image_tag('material/product-img/a001.png',class:"prod-img")
                 .product-box
                   %h3.prod-name ee
                   .details
@@ -174,9 +178,10 @@
             %h3.text-new アーカイバ
           .lists-new
             .list-new
-              = link_to "#" do
+
+              = link_to "/posts/1" ,method: :get do
                 %figure.img-new
-                  = image_tag('material/product-img/IMG_9072.jpeg',class:"prod-img")
+                  = image_tag('material/product-img/a001.png',class:"prod-img")
                 .product-box
                   %h3.prod-name ee
                   .details
@@ -187,7 +192,7 @@
                         0
                     %p.tax (税込)
             .list-new
-              = link_to "#" do
+              = link_to "/users/mypage" do
                 %figure.img-new
                   = image_tag('material/product-img/a007.png',class:"prod-img")
                 .product-box
@@ -272,7 +277,7 @@
             = image_tag('material/logo/logo-white.png',class:"biglogo")
         %p.minilogo © FURIMA
       / 出品アイコン
-      = link_to new_post_path do
+      = link_to "#" do
         .purchase-box
           %span.purchase-text 出品する
           = image_tag('material/icon/icon_camera.png',class:"camera-image")
