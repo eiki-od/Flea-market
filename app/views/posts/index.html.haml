@@ -182,7 +182,6 @@
             .list-new
 
               = link_to "/posts/1" ,method: :get do
-                \%&gt;
                 %figure.img-new
                   -# = image_tag('material/product-img/IMG_9072.jpeg',class:"prod-img")
 
@@ -196,7 +195,7 @@
                         0
                     %p.tax (税込)
             .list-new
-              = link_to "#" do
+              = link_to "/users/mypage" do
                 %figure.img-new
                   = image_tag('material/product-img/a007.png',class:"prod-img")
                 .product-box
