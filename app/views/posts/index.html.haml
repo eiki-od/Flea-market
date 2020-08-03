@@ -28,8 +28,11 @@
               = link_to "カテゴリー", "#", class: "login"
               = link_to "ブランド", "#", class: "login"
           %ul.right-lists
-            = link_to "ログイン", "#", class: "login"
-            = link_to "新規会員登録", "#", class: "new"
+            - if user_signed_in?
+              = link_to "マイページ", destroy_user_session_path, method: :delete
+            - else
+              = link_to "新規登録", new_user_registration_path, class: "login"
+              = link_to "ログイン", new_user_session_path, class: "new"
         .picture
           .picture-box
             %h2 人生を変えるフリマアプリ
@@ -117,7 +120,8 @@
             .list-new
               = link_to "#" do
                 %figure.img-new
-                  = image_tag('material/product-img/IMG_9072.jpeg',class:"prod-img")
+
+                  -# = image_tag('material/product-img/IMG_9072.jpeg',class:"prod-img")
                 .product-box
                   %h3.prod-name ee
                   .details
@@ -174,9 +178,10 @@
             %h3.text-new アーカイバ
           .lists-new
             .list-new
-              = link_to "#" do
+
+              = link_to "/posts/1" ,method: :get do
                 %figure.img-new
-                  = image_tag('material/product-img/IMG_9072.jpeg',class:"prod-img")
+                  -# = image_tag('material/product-img/IMG_9072.jpeg',class:"prod-img")
                 .product-box
                   %h3.prod-name ee
                   .details
@@ -187,7 +192,7 @@
                         0
                     %p.tax (税込)
             .list-new
-              = link_to "#" do
+              = link_to "/users/mypage" do
                 %figure.img-new
                   = image_tag('material/product-img/a007.png',class:"prod-img")
                 .product-box
@@ -276,3 +281,4 @@
         .purchase-box
           %span.purchase-text 出品する
           = image_tag('material/icon/icon_camera.png',class:"camera-image")
+
