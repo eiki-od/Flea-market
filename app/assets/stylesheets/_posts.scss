@@ -66,7 +66,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 60px;
+    padding: 0px 90px;
 
   
     ul{
@@ -76,10 +76,10 @@ header{
       a{
         text-decoration: none;
         color: black;
+        padding-left: 30px;
         
         .new{
           padding-left: 16px;
-          padding-right: 30px;
         }
       }
     }
@@ -595,7 +595,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 60px;
+    padding: 0px 90px;
     ul{
       list-style: none;
       display: flex;
@@ -607,6 +607,7 @@ header{
         .new{
           padding-left: 16px;
           padding-right: 30px;
+          
         }
       }
     }
