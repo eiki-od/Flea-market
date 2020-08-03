@@ -104,9 +104,6 @@ header{
   .picture{
     height: 560px;
     background-size: cover;
-    // background-image: image-url("todo.png");
-
-    background-image: image-url("material/pict/bg-mainVisual-pict_pc.jpg");
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
@@ -145,7 +142,6 @@ header{
 
     }
   }
-
 }
 
 
@@ -655,4 +651,221 @@ input#post_price {
 .price-num {
   display: flex;
   justify-content: space-between;
+
+// 投稿ページ
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+.header-logo-post {
+  text-align: center;
+  background-color: whitesmoke;
+  padding-bottom: 15px;
+}
+.head-logo {
+  height: 60px;
+  width: 220px;
+  padding-top: 30px;
+}
+.exhibition {
+  background-color: white;
+  padding: 10px 50px;
+//検索バー
+header{
+  .search-box{
+    width: 85%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 90px;
+    margin-bottom: -10px;
+    .header-logo{
+      width: 140px;
+      height: 41px;
+      margin-right: 30px;
+      margin-top: 5px;
+    }
+    .search-box-text{
+      width: 100%;
+      height: 100%;
+      margin-top: 33px;
+      .input-form{
+        display: flex;
+        .search{
+          width: calc(100% - 26px);
+          height: 33px;
+          padding: 0 0 0 5px;
+          font-size: 15px;
+        }  
+        .submitbtn{
+          width: 23px;
+          height: 22px;
+          border: 0;
+          cursor: pointer;
+          background-color: #3CCACE;
+          padding: 8px;
+        }
+        
+      }
+    }
+  }
+   
+
+  
+  .search-nav{
+    height: 53px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 90px;
+    ul{
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      a{
+        text-decoration: none;
+        color: black;
+        
+        .new{
+          padding-left: 16px;
+          padding-right: 30px;
+          
+        }
+      }
+    }
+    .left-lists{
+      .category{
+        padding: 0 30px;
+      }
+    }
+
+  }
+  
+}
+p {
+  font-size: 14px;
+  padding-left: 5px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.label {
+  font-style: 14px;
+  color: rgb(136, 136, 136);
+  padding-top: 30px;
+  margin-top: 10px;
+}
+.image {
+  margin-bottom: 16px;
+}
+.max-10 {
+  font-size: 12px;
+}
+select {
+ height: 48px; 
+ width: 614px;
+ border: 2px solid #eee;
+ margin: 20px 0;
+ padding:0 5px;
+ border-radius: 5px;
+
+}
+.category-form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+ height: 48px; 
+ width: 600px;
+ border: 2px solid #eee;
+ margin: 20px 0;
+ padding:0 5px;
+ border-radius: 5px;
+}
+.about {
+  margin-top: 30px;
+}
+textarea {
+  width: 600px;
+  font-size: 16px;
+  padding:10px 0 0 10px;
+  border: 2px solid #eee;
+}
+.submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  input {
+    width: 400px;
+    text-align: center;
+    background-color: #3CCACE;
+    border:1px solid rgb(136, 136, 136);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+    height: 48px;
+  }
+  input:hover {
+    opacity: 0.8;
+  }
+  a {
+    text-align: center;
+    margin: 10px 0;
+    text-decoration: none;
+  }
+  a:hover{
+    opacity: 0.8;
+   }
+}
+.footer-logo {
+  height: 70px;
+  width: 230px;
+  margin-top: 30px;
+}
+
+.minilogo {
+  text-align: center;
+  color: #333;
+}
+.fee {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  border-top: 1px solid #eee;
+}
+input#post_price {
+  text-align: right;
+  width: 300px;
+}
+.price-num {
+  display: flex;
+  justify-content: space-between;
+.purchase-box{
+    width: 90px;
+    height: 86px;
+    background: #3CCACE;
+    text-align: center;
+    border-radius: 4%;
+    bottom: 32px;
+    right: 32px;
+    position: fixed;
+    padding: 15px;
+  .purchase-text{
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  }
+  .camera-image{
+    height: 54px;
+    width: 54px;
+  }
+}
+}
+}
 }
