@@ -1,21 +1,67 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.Header
+  .Header__single
+    = image_tag('material/logo/logo.png',class:"header-logo")
+.Main
+  .Main__section
+    .Main__section__inputs
+      %h2 会員情報入力
+    .Main__section__input
+      .Main__section__input__content
+        = form_for(@user, url: user_registration_path) do |f|
+          = render "devise/shared/error_messages", resource: @user
+          .field
+            = f.label :"ニックネーム"
+            %span 必須
+            %br/
+            = f.text_field :name, class: "field__input", placeholder: "例）フリマ太郎"
+          .field
+            = f.label :"メールアドレス"
+            %span 必須 
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "field__input", placeholder: "PC・スマホどちらでも可"
+          .field
+            = f.label :"パスワード"
+            %span 必須 
+            - if @minimum_password_length
+              %em
+                (#{@minimum_password_length}文字以上)
+            %br/
+            = f.password_field :password, autocomplete: "new-password", class: "field__input", placeholder: "半角英数字"
+          .field
+            = f.label :"確認用パスワード"
+            %span 必須 
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: "field__input", placeholder: "半角英数字"
+          .field
+            = f.label :"名字"
+            %span 必須 
+            %br/
+            = f.text_field :kanji_family, class: "field__input", placeholder: "例）佐藤"
+          .field
+            = f.label :"名前"
+            %span 必須 
+            %br/
+            = f.text_field :kanji_first, class: "field__input", placeholder: "例）太郎"
+          .field
+            = f.label :"カナ（名字）"
+            %span 必須 
+            %br/
+            = f.text_field :kana_family, class: "field__input", placeholder: "例）サトウ"
+          .field
+            = f.label :"カナ（名前）"
+            %span 必須 
+            %br/
+            = f.text_field :kana_first, class: "field__input", placeholder: "例）タロウ"
+          .field
+            = f.label :"生年月日"
+            %span 必須 
+            %br/
+            = f.date_field :birth, class: "field__input"
+          .field
+            = f.label :"電話番号"
+            %span 必須 
+            %br/
+            = f.text_field :phone, class: "field__input", placeholder: "電話番号の入力（ - なし）"
+          .actions
+            = f.submit "次へ", {class: "next"}
+            -# = render "devise/shared/links"
