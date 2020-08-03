@@ -29,12 +29,6 @@ class PostsController < ApplicationController
     # ８行目にbinding.pryを記述すると、値は取りに行っていることがわかる。▶︎記述内容は間違っていないと思う。
     @post = Post.find(params[:id])
     @post.destroy 
-<<<<<<< HEAD
-=======
-  end
-  
-  def destory
->>>>>>> bc074e5afceedfc4fb9feecbefbe717597f4e73e
   end
   
   def destory
