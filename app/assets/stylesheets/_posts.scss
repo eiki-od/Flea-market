@@ -104,9 +104,6 @@ header{
   .picture{
     height: 560px;
     background-size: cover;
-    // background-image: image-url("todo.png");
-
-    background-image: image-url("material/pict/bg-mainVisual-pict_pc.png");
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
@@ -145,7 +142,6 @@ header{
 
     }
   }
-
 }
 
 
@@ -531,6 +527,130 @@ header{
     width: 54px;
   }
 }
+input#content.search {
+  margin: 0 0;
+}
+
+// 投稿ページ
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+.header-logo-post {
+  text-align: center;
+  background-color: whitesmoke;
+  padding-bottom: 15px;
+}
+.head-logo {
+  height: 60px;
+  width: 220px;
+  padding-top: 30px;
+}
+.exhibition {
+  background-color: white;
+  padding: 10px 50px;
+}
+p {
+  font-size: 14px;
+  padding-left: 5px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.label {
+  font-style: 14px;
+  color: rgb(136, 136, 136);
+  padding-top: 30px;
+  margin-top: 10px;
+}
+.image {
+  margin-bottom: 16px;
+}
+.max-10 {
+  font-size: 12px;
+}
+select {
+ height: 48px; 
+ width: 614px;
+ border: 2px solid #eee;
+ margin: 20px 0;
+ padding:0 5px;
+ border-radius: 5px;
+
+}
+.category-form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+ height: 48px; 
+ width: 600px;
+ border: 2px solid #eee;
+ margin: 20px 0;
+ padding:0 5px;
+ border-radius: 5px;
+}
+.about {
+  margin-top: 30px;
+}
+textarea {
+  width: 600px;
+  font-size: 16px;
+  padding:10px 0 0 10px;
+  border: 2px solid #eee;
+}
+.submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  input {
+    width: 400px;
+    text-align: center;
+    background-color: #3CCACE;
+    border:1px solid rgb(136, 136, 136);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+    height: 48px;
+  }
+  input:hover {
+    opacity: 0.8;
+  }
+  a {
+    text-align: center;
+    margin: 10px 0;
+    text-decoration: none;
+  }
+  a:hover{
+    opacity: 0.8;
+   }
+}
+.footer-logo {
+  height: 70px;
+  width: 230px;
+  margin-top: 30px;
+}
+
+.minilogo {
+  text-align: center;
+  color: #333;
+}
+.fee {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  border-top: 1px solid #eee;
+}
+input#post_price {
+  text-align: right;
+  width: 300px;
+}
+.price-num {
+  display: flex;
+  justify-content: space-between;
 
 //////////// 以下、商品詳細ページの記述////////////////////
 
@@ -618,49 +738,7 @@ header{
     }
 
   }
-  .picture{
-    height: 560px;
-    background-size: cover;
-    background-image: url(material/pict/bg-mainVisual-pict_pc.png);
-    background-repeat: no-repeat;
-    background-position: top center;
-    position: relative;
-    padding: 0 60px;
-    display: flex;
-    align-items: center;
-
-    h2{
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      font-size: 60px;
-      line-height: 1.2;
-      color: #fff;
-      margin-top: 50px;
-    }
-    
-
-    p{
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      font-size: 18px;
-      color: #fff;
-      line-height: 1.77778;
-      margin: 16px 0 30px 0;
-    }
-    .content-btn{
-      height: 100%;
-      display: flex;
-      .abtn{
-        height: 53px;
-        width: 180px;
-      }
-      .gbtn{
-        height: 53px;
-        width: 180px;
-        margin-left: 10px;
-      }
-
-    }
-  }
-
+  
 }
 //パンくずリスト
 .bredcrumbs{
@@ -1041,4 +1119,5 @@ header{
     height: 54px;
     width: 54px;
   }
+}
 }

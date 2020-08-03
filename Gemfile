@@ -70,6 +70,9 @@ gem 'devise'
 
 gem "font-awesome-sass"
 
-gem "pry-rails"
+gem "carrierwave"
 
-gem "jquery-rails"
+gem "mini_magick"
+
+gem 'jquery-rails'
+
