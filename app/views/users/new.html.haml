@@ -114,11 +114,9 @@
  
     .main-page
       .main-page__logout
-        .main-page__logout__btn   
-          ログアウト  
-        -# = f.submit 'ログアウト', class: 'submit-btn'  ←これだけだとエラーになります。でも、多分これが必要です。
-        -# ここのボタンを押したリンク先に、rails routesで調べた〜pathを書くと、destroyアクションが起き、ログアウトになると思います。
-
+        .main-page__logout__btn
+          - if user_signed_in?
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
   / いますぐ無料ダウンロード
   #bottom-ad
     .bottom-picture
