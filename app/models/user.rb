@@ -4,5 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, :kanji_family, :kanji_first, :kana_family, :kana_first, :birth, presence: true
+  validates :email, format: { with: /\A\S+@\S+\.\S+\z/}
+  validates :kanji_family, :kanji_first, format: { with: /\A[一-龥ぁ-ん]/}
+  validates :kana_family, :kana_first, format: { with: /\A[ァ-ヶー－]+\z/}
   has_one :address
 end
