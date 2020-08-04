@@ -1,13 +1,11 @@
 class PostsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  # before_action :set_post, except: [:index, :new, :create]
   def index
     @posts = Post.includes(:images).order('created_at DESC')
   end
 
   def new
-    @posts = Post.all
     @post = Post.new
-    @post.images.new
   end
   
   def create
@@ -15,14 +13,14 @@ class PostsController < ApplicationController
   end
   
   
-  def set_product
-    # @post = Post.find(params[:id])
-  end
+  # def set_post
+  #   @post = Post.find(params[:id])
+  # end
   
   def show
     @posts = Post.all
   end
-  
+
   def edit
   end
   
@@ -31,14 +29,11 @@ class PostsController < ApplicationController
   
   
   def update
-    if @post.update(product_params)
+    if @post.update(post_params)
       redirect_to root_path
     else
       render :edit
     end
-  end
-  
-  def destroy
   end
   
   private

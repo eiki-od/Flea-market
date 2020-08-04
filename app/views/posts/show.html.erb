@@ -1,2 +1,12 @@
-<h1>hello</h1>
-<%=link_to "編集する", "posts/edit"
+<% @posts.each do |post| %>
+<p><%= post.name %></p>
+<p><%= post.size %></p>
+<p><%= post.brand %></p>
+<p><%= post.fee %></p>
+<p><%= post.status %></p>
+<p>¥<%= post.price %></p>
+<p><%= post.days %></p>
+<p><%= post.about %></p>
+<% end %>
+<%=link_to "編集する", edit_post_path %>
+<%=link_to "削除する", "/users/mypage" %>
