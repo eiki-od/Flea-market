@@ -5,17 +5,13 @@ class PostsController < ApplicationController
   end
 
   def new
+    @posts = Post.all
     @post = Post.new
     @post.images.new
   end
   
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    Post.create(post_params)
   end
   
   
@@ -24,14 +20,15 @@ class PostsController < ApplicationController
   end
   
   def show
+    @posts = Post.all
+  end
   
+  def edit
   end
   
   def destory
   end
   
-  def edit
-  end
   
   def update
     if @post.update(product_params)
@@ -47,6 +44,6 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(images_attributes: [:src])
+    params.require(:post).permit(:name)
   end
 end

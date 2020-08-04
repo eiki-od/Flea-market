@@ -363,7 +363,7 @@ header{
         height: 150px;
         position: relative;
         overflow: hidden;
-        margin: 0;
+        margin: 0px;
         z-index: auto;
         .prod-img{
           position: absolute;
@@ -1241,4 +1241,100 @@ input#post_price {
 }
 }
 }
+}
+
+// 出品完了ページ
+.contents-create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: whitesmoke;
+  .success {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    width: 45vw;
+    background-color: #fff;
+    border-radius: 5px;
+    .post-success {
+      font-size: 17px;
+      margin-bottom: 20px;
+      margin-top: 50px;
+      font-weight: bold;
+    }
+    .success-attention {
+      font-size: 14px;
+      margin-top: 0;
+      font-weight: normal;
+      padding-left: 0;
+      margin-bottom: 20px;
+      .success-a {
+        color: tomato;
+        text-decoration: none;
+      }
+      .success-a:hover {
+        opacity: 0.8;
+        border-bottom: 1px solid tomato;
+      }
+    }
+    .btns {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .btn {
+        text-decoration: none;
+        margin-bottom: 20px;
+      }
+      .btn-again {
+        background-color: #3ccace;
+        font-size: 17px;
+        color: #fff;
+        width: 340px;
+        height: 45px;
+        text-align: center;
+        display: block;
+        font-weight: 600;
+        line-height: 45px;
+        border-radius: 5px;
+      }
+      .btn-again:hover {
+        opacity: 0.9;
+      }
+      .btn-watch {
+        background-color: #3ccace;
+        font-size: 17px;
+        color: #fff;
+        width: 340px;
+        height: 45px;
+        text-align: center;
+        display: block;
+        font-weight: 600;
+        line-height: 45px;
+        border-radius: 5px;
+      }
+      .btn-watch:hover {
+        opacity: 0.9;
+      }
+      .btn-mypage {
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .btn-mypage:hover {
+        opacity: 0.7;
+      }
+      .btn-top {
+        color: #333;
+      }
+      .btn-top:hover {
+        opacity: 0.7;
+      }
+    }
+  }
 }
