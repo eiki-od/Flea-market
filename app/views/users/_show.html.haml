@@ -1,0 +1,24 @@
+.wrap
+  %header.search-bar
+    / 検索バー
+    .search-box
+      .search-box-icon
+        = image_tag('material/logo/logo.png',class:"header-logo")
+      .search-box-text
+        = form_with url: "#", method: :post, class:"input-form",local: true do |form|
+          = form.text_field :content ,class:"search",placeholder: 'キーワードから探す'
+          = form.label :submitbtn ,class:"submitbtn" do
+            = icon('fas', 'search',class:"seacrhicon")
+            = form.submit id:"submitbtn",class:"sbtn"
+    / navbar（カテゴリーetc）、トップイメージなど
+    .search-nav
+      %ul.left-lists
+        %li.category
+          = link_to "カテゴリー", "#", class: "login"
+          = link_to "ブランド", "#", class: "login"
+      %ul.right-lists
+        - if user_signed_in?
+          = link_to "マイページ", "users/show", class: "login"
+        - else
+          = link_to "新規登録", new_user_registration_path, class: "login"
+          = link_to "ログイン", new_user_session_path, class: "new"

@@ -1,27 +1,5 @@
-.wrap
-  %header.search-bar
-    / 検索バー
-    .search-box
-      .search-box-icon
-        = image_tag('material/logo/logo.png',class:"header-logo")
-      .search-box-text
-        = form_with url: "#", method: :post, class:"input-form",local: true do |form|
-          = form.text_field :content ,class:"search",placeholder: 'キーワードから探す'
-          = form.label :submitbtn ,class:"submitbtn" do
-            = icon('fas', 'search',class:"seacrhicon")
-            = form.submit id:"submitbtn",class:"sbtn"
-    / navbar（カテゴリーetc）、トップイメージなど
-    .search-nav
-      %ul.left-lists
-        %li.category
-          %a{:href => "#"} カテゴリー
-          %a{:href => "#"}
-            %li.brand ブランド
-      %ul.right-lists
-        %a{:href => "#"}
-          %li.login ログイン
-        %a{:href => "#"}
-          %li.new 新規会員登録
+.Render
+  = render "users/show"
   / パンくずリスト
   %nav.bredcrumbs
     %ul
@@ -108,15 +86,12 @@
           %li 
             =link_to '電話番号の確認',"#" , class:"list"
             %i.fas.fa-chevron-right
-          %li 
-            =link_to 'ログアウト' ,"/users/new", method: :delete, class:"list"
-            %i.fas.fa-chevron-right
  
     .main-page
       .main-page__logout
         .main-page__logout__btn
           - if user_signed_in?
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to "ログアウト",  destroy_user_session_path, method: :delete
   / いますぐ無料ダウンロード
   #bottom-ad
     .bottom-picture
