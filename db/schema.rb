@@ -12,9 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2020_07_29_065022) do
 
-  create_table "adresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "postal_code", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "street"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -33,9 +39,7 @@ ActiveRecord::Schema.define(version: 2020_07_29_065022) do
     t.string "fee"
     t.string "days"
     t.integer "price"
-    t.string "brand"
-    t.integer "user_id"
-    t.integer "category_id"
+    t.string "bland"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

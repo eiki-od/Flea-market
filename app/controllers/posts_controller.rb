@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   end
   
   def create
-    Post.create(post_params)
+    @post = Post.new(post_params)
+    @post.save!
   end
   
   
@@ -29,16 +30,11 @@ class PostsController < ApplicationController
   
   
   def update
-    if @post.update(post_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
   end
   
   private
   
   def post_params
-    params.require(:post).permit(:name)
+    params.require(:post).permit(:name,:about,:size,:bland,:status,:fee,:days,:price)
   end
 end

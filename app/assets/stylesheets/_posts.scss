@@ -1338,3 +1338,115 @@ input#post_price {
     }
   }
 }
+
+
+// 詳細ページ
+.wrapper {
+  background-color: whitesmoke;
+}
+.show {
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .show-contents {
+    
+    .box {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      margin:0;
+      padding: 20px 80px;
+      .image-box {
+        width: 280px;
+        height: 300px;
+        background-color: #333;
+        margin: 0 30px 0 0;
+      }
+    }
+    .post-box {
+      margin: 0;
+      font-size: 14px;
+      text-align: left;
+      border: 1px solid #333;
+      font-weight: normal;
+      padding: 10px 20px 10px 10px;
+      color: #333;
+      border: 0.5px solid #eee;
+    }
+  }
+}
+
+.post-box-name {
+  background-color: #fff;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 20px;
+}
+.post-box-price {
+  background-color: #fff;
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 0;
+  font-size: 30px;
+}
+.post-box-about {
+  background-color: #fff;
+  padding: 30px 0 30px 20px;
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.table-left {
+  background-color: whitesmoke;
+}
+.span-fee {
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.show-btn {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 716px;
+  margin-bottom: 50px;
+  .edit-btn {
+    text-decoration: none;
+    width: 30vw;
+    background-color: #3ccace;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+  }
+  .edit-btn a {
+    text-decoration: none;
+    color: #fff;
+    padding: 19px 100px;
+  }
+  .destroy-btn {
+    text-decoration: none;
+    width: 30vw;
+    background-color: gray;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+  .destroy-btn a {
+    text-decoration: none;
+    color: #eee;
+    padding: 19px 100px;
+  }
+  .or {
+    font-weight: normal;
+    font-size: 16px;
+    margin: 15px;
+  }
+}

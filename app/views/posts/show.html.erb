@@ -1,12 +1,56 @@
 <% @posts.each do |post| %>
-<p><%= post.name %></p>
-<p><%= post.size %></p>
-<p><%= post.brand %></p>
-<p><%= post.fee %></p>
-<p><%= post.status %></p>
-<p>¥<%= post.price %></p>
-<p><%= post.days %></p>
-<p><%= post.about %></p>
-<% end %>
-<%=link_to "編集する", edit_post_path %>
-<%=link_to "削除する", "/users/mypage" %>
+<div class="wrapper">
+  <div class="show">
+    <div class="show-contents">
+        <p class="post-box-name"><%= post.name %></p>
+      <div class="box">
+        <div  class="image-box">
+        </div>
+        <div class="show-item">
+          <table>
+          <tr>
+            <td><p class="post-box post-box-user table-left">出品者</p></td>
+            <td><p class="post-box post-box-user">出品者</p></td>
+          </tr>
+          <tr>
+            <td><p class="post-box post-box-category table-left">カテゴリー</p></td>
+            <td><p class="post-box post-box-category">カテゴリー</p></td>
+          </tr>
+          <tr>
+            <td><p class="post-box post-box-bland table-left">ブランド</p></td>
+            <td><p class="post-box post-box-bland"><%= post.bland %>　</p></td>
+          </tr>
+          <tr>
+            <td><p class="post-box post-box-size table-left">商品のサイズ</p></td>
+            <td><p class="post-box post-box-size"><%= post.size %></p></td>
+          </tr>
+          <tr>
+            <td><p class="post-box post-box-status table-left">商品の状態</p></td>
+            <td><p class="post-box post-box-status"><%= post.status %></p></td>
+          </tr>
+          <tr>
+            <td><p class="post-box post-box-fee table-left">配送料の負担</p></td>
+            <td><p class="post-box post-box-fee"><%= post.fee %></p></td>
+          </tr>
+          <tr>
+            <td><p class="post-box post-box-area table-left">配送元地域</p></td>
+            <td><p class="post-box post-box-area">配送元地域</p></td>
+          </tr>
+          <tr>
+            <td><p class="post-box post-box-days table-left">発送日の目安</p></td>
+            <td><p class="post-box post-box-days"><%= post.days %></p></td>
+          </tr>
+          </table>
+        </div>
+      </div> 
+        <p class="post-box-price">¥<%= post.price %><span class="span-fee">(税込み) <%= post.fee %><span></p>
+        <p class="post-box-about"><%= post.about %></p>
+    </div>
+  </div>
+  <div class="show-btn">
+    <p class="edit-btn"><%=link_to "編集する", edit_post_path %></p>
+    <p class="or">or</p>
+    <p class="destroy-btn"><%=link_to "この商品を削除する", "/users/mypage" %></p>
+  </div>
+  <% end %>
+</div>

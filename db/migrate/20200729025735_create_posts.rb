@@ -8,9 +8,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :fee
       t.string :days
       t.integer :price
-      t.string :brand
-      t.integer :user_id
-      t.integer :category_id
+      t.string :bland
       t.timestamps
     end
   end
