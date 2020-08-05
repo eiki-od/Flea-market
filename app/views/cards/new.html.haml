@@ -1,12 +1,11 @@
 .Render
   = render "template/header"
-  / メイン画像〜商品詳細まで
   .main
     .side-bar
       .side-bar__mypage
         %ul
           %li 
-            =link_to 'マイページ',"#" , class:"list"
+            =link_to 'マイページ',"#", class:"list"
             %i.fas.fa-chevron-right
           %li 
             =link_to 'お知らせ',"#" , class:"list"
@@ -33,7 +32,7 @@
             =link_to '出品した商品 - 取引中',"#" , class:"list"
             %i.fas.fa-chevron-right
           %li 
-            =link_to '出品した商品 - 売却済み',"#" , class:"list"
+            =link_to '出品した商品 - 売却済み',"/posts/update" , class:"list"
             %i.fas.fa-chevron-right
           %li 
             =link_to '購入した商品 - 取引中',"#" , class:"list"
@@ -64,8 +63,8 @@
             =link_to '発送元・お届け先住所変更',"#" , class:"list"
             %i.fas.fa-chevron-right
           %li 
-            =link_to '支払い方法',"#" , class:"list"
-            %i.fas.fa-chevron-right
+            =link_to '支払い方法', "/cards/new" , class:"list"
+            %i.fas.fa-chesvron-right
           %li 
             =link_to 'メール/パスワード',"#" , class:"list"
             %i.fas.fa-chevron-right
@@ -75,25 +74,19 @@
           %li 
             =link_to '電話番号の確認',"#" , class:"list"
             %i.fas.fa-chevron-right
- 
+          %li 
+            =link_to 'ログアウト' ,"/users/new", method: :delete, class:"list"
+            %i.fas.fa-chevron-right
     .main-page
-      .main-page__logout
-        .main-page__logout__btn
-          - if user_signed_in?
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
-  / いますぐ無料ダウンロード
-  #bottom-ad
-    .bottom-picture
-      .bottom-picture-box
-        %h2 だれでもかんたん、人生を変えるフリマアプリ
-        %p 今すぐ無料ダウンロード！
-        %div
-          .content-btn
-            = link_to "#" do
-              = image_tag('material/icon/app-store.svg',class:"abtn")
-            = link_to "#" do
-              = image_tag('material/icon/google-play.svg',class:"gbtn")
-    = render  "template/footer"
+      .main-page__profile
+        .main-page__history
+          .main-page__history__list
+            %h2 支払い情報
+            %ul
+              %li クレジットカード
+              %li 
+                =link_to '新規カードを登録する' ,"/cards/show"
+              %li.bottom 選択した支払い方法を使う
 
 
-
+= render partial: "template/footer"

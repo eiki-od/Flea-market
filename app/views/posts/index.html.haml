@@ -3,7 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "UTF-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :namep => "viewport"}/
     %title Document
     / css呼び出し
     / FontAwesome呼び出し
@@ -29,7 +29,7 @@
               = link_to "ブランド", "#", class: "login"
           %ul.right-lists
             - if user_signed_in?
-              = link_to "マイページ", "users/show", class: "login"
+              = link_to "マイページ", "/show", class: "login"
             - else
               = link_to "新規登録", new_user_registration_path, class: "login"
               = link_to "ログイン", new_user_session_path, class: "new"

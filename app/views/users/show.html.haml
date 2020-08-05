@@ -1,23 +1,11 @@
 .Render
-  = render "users/show"
-  / パンくずリスト
-  %nav.bredcrumbs
-    %ul
-      %li
-        %a{:href => ""} furima
-      %li
-        %i.fas.fa-chevron-right
-      %li
-        %a{:href => ""} マイページ
-
-
-  / メイン画像〜商品詳細まで
+  = render "template/header"
   .main
     .side-bar
       .side-bar__mypage
         %ul
           %li 
-            =link_to 'マイページ',"#" , class:"list"
+            =link_to 'マイページ',edit_post_path , class:"list"
             %i.fas.fa-chevron-right
           %li 
             =link_to 'お知らせ',"#" , class:"list"
@@ -44,7 +32,7 @@
             =link_to '出品した商品 - 取引中',"#" , class:"list"
             %i.fas.fa-chevron-right
           %li 
-            =link_to '出品した商品 - 売却済み',"#" , class:"list"
+            =link_to '出品した商品 - 売却済み',"/posts/update" , class:"list"
             %i.fas.fa-chevron-right
           %li 
             =link_to '購入した商品 - 取引中',"#" , class:"list"
@@ -75,8 +63,8 @@
             =link_to '発送元・お届け先住所変更',"#" , class:"list"
             %i.fas.fa-chevron-right
           %li 
-            =link_to '支払い方法',"#" , class:"list"
-            %i.fas.fa-chevron-right
+            =link_to '支払い方法', "/cards/new" , class:"list"
+            %i.fas.fa-chesvron-right
           %li 
             =link_to 'メール/パスワード',"#" , class:"list"
             %i.fas.fa-chevron-right
@@ -92,7 +80,6 @@
  
     .main-page
       .main-page__profile
-
         .main-page__profile__banner
           = image_tag('material/product-img/a004.png',class:"profile-icon")
           %p 評価 20 出品数 50
@@ -133,46 +120,4 @@
               = image_tag('material/icon/app-store.svg',class:"abtn")
             = link_to "#" do
               = image_tag('material/icon/google-play.svg',class:"gbtn")
-  / フッター
-  #footer
-    %ul.contents
-      %li.content
-        %h2.title-foot FURIMAについて
-        %ul
-          %li
-            %a{:href => "#"} 会社概要（運営会社）
-          %li
-            %a{:href => "#"} プライバシーポリシー
-          %li
-            %a{:href => "#"} FURIMA利用契約
-          %li
-            %a{:href => "#"} ポイントに関する特約
-      %li.content
-        %h2.title-foot FURIMAを見る
-        %ul
-          %li
-            %a{:href => "#"} カテゴリー一覧
-          %li
-            %a{:href => "#"} ブランド一覧ー
-      %li.content
-        %h2.title-foot ヘルプ＆ガイド
-        %ul
-          %li
-            %a{:href => "#"} FURIMAガイド
-          %li
-            %a{:href => "#"} FURIMAロゴ利用ガイドライン
-          %li
-            %a{:href => "#"} お知らせ
-    .logo-foot
-      = link_to "#" do
-        = image_tag('material/logo/logo-white.png',class:"biglogo")
-    %p.minilogo © FURIMA
-
-  / 出品アイコン
-  = link_to "#" do
-    .purchase-box
-      %span.purchase-text 出品する
-      = image_tag('material/icon/icon_camera.png',class:"camera-image")
-
-
-
+    = render  "template/footer"

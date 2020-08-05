@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
   root to: "posts#index"
-  resources :posts, only: [:index,:new, :show, :destroy]
+  resources :posts, only: [:index,:new, :show, :destroy, :edit, :update]
   resources :users, only: [:show, :new]
+  resources :cards, only: [:show, :new]
   # 12行目にnewを加えていますが、これがログアウト画面を表示させるためのものです。
   # ※７つのアクションのうち、使わなそうなアクションを選んで、ビューまで作るように言われてたので、この実装をしています。
   # それ以外、newにしているこだわりはありません。
