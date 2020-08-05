@@ -1,8 +1,8 @@
-<% @posts.each do |post| %>
+<%# <% @posts.each do |post| %> 
 <div class="wrapper">
   <div class="show">
     <div class="show-contents">
-        <p class="post-box-name"><%= post.name %></p>
+        <p class="post-box-name"><%= @post.name %></p>
       <div class="box">
         <div  class="image-box">
         </div>
@@ -14,37 +14,41 @@
           </tr>
           <tr>
             <td><p class="post-box post-box-category table-left">カテゴリー</p></td>
-            <td><p class="post-box post-box-category">カテゴリー</p></td>
+            <td><p class="post-box post-box-category"><%= @post.category %></p></td>
           </tr>
           <tr>
             <td><p class="post-box post-box-bland table-left">ブランド</p></td>
-            <td><p class="post-box post-box-bland"><%= post.bland %>　</p></td>
+            <td><p class="post-box post-box-bland"><%= @post.bland %>　</p></td>
           </tr>
           <tr>
             <td><p class="post-box post-box-size table-left">商品のサイズ</p></td>
-            <td><p class="post-box post-box-size"><%= post.size %></p></td>
+            <td><p class="post-box post-box-size"><%= @post.size %></p></td>
           </tr>
           <tr>
             <td><p class="post-box post-box-status table-left">商品の状態</p></td>
-            <td><p class="post-box post-box-status"><%= post.status %></p></td>
+            <td><p class="post-box post-box-status"><%= @post.status %></p></td>
           </tr>
           <tr>
             <td><p class="post-box post-box-fee table-left">配送料の負担</p></td>
-            <td><p class="post-box post-box-fee"><%= post.fee %></p></td>
+            <td><p class="post-box post-box-fee"><%= @post.fee %></p></td>
+          </tr>
+          <tr>
+            <td><p class="post-box post-box-method table-left">配送の方法</p></td>
+            <td><p class="post-box post-box-method"><%= @post.method %></p></td>
           </tr>
           <tr>
             <td><p class="post-box post-box-area table-left">配送元地域</p></td>
-            <td><p class="post-box post-box-area">配送元地域</p></td>
+            <td><p class="post-box post-box-area"><%= @post.area %></p></td>
           </tr>
           <tr>
             <td><p class="post-box post-box-days table-left">発送日の目安</p></td>
-            <td><p class="post-box post-box-days"><%= post.days %></p></td>
+            <td><p class="post-box post-box-days"><%= @post.days %></p></td>
           </tr>
           </table>
         </div>
       </div> 
-        <p class="post-box-price">¥<%= post.price %><span class="span-fee">(税込み) <%= post.fee %><span></p>
-        <p class="post-box-about"><%= post.about %></p>
+        <p class="post-box-price">¥<%= @post.price %><span class="span-fee">(税込み) <%= @post.fee %><span></p>
+        <p class="post-box-about"><%= @post.about %></p>
     </div>
   </div>
   <div class="show-btn">
@@ -52,5 +56,5 @@
     <p class="or">or</p>
     <p class="destroy-btn"><%=link_to "この商品を削除する", "/users/mypage" %></p>
   </div>
-  <% end %>
+  <%# <% end %> 
 </div>

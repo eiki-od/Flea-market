@@ -1350,7 +1350,7 @@ input#post_price {
   justify-content: center;
   align-items: center;
   .show-contents {
-    
+    width: 53vw;
     .box {
       background-color: #fff;
       display: flex;
@@ -1412,16 +1412,19 @@ input#post_price {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 716px;
+  width: 54vw;
   margin-bottom: 50px;
   .edit-btn {
     text-decoration: none;
-    width: 30vw;
+    width: 45vw;
     background-color: #3ccace;
     text-align: center;
     height: 50px;
     line-height: 50px;
     border-radius: 5px;
+  }
+  .edit-btn:hover {
+    opacity: 0.8;
   }
   .edit-btn a {
     text-decoration: none;
@@ -1430,7 +1433,7 @@ input#post_price {
   }
   .destroy-btn {
     text-decoration: none;
-    width: 30vw;
+    width: 45vw;
     background-color: gray;
     text-align: center;
     height: 50px;
@@ -1438,6 +1441,9 @@ input#post_price {
     border-radius: 5px;
     margin-bottom: 40px;
     margin-top: 0;
+  }
+  .destroy-btn:hover {
+    opacity: 0.8;
   }
   .destroy-btn a {
     text-decoration: none;
@@ -1449,4 +1455,9 @@ input#post_price {
     font-size: 16px;
     margin: 15px;
   }
+}
+.post-box-about {
+  padding: 20px 80px;
+  font-weight: normal;
+  font-size: 16px;
 }
