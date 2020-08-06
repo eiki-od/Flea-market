@@ -16,24 +16,26 @@ class PostsController < ApplicationController
       render "posts/new"
   end
 end
-  
-  
-  # def set_post
-  #   @post = Post.find(params[:id])
-  # end
+
   
   def show
     @post = Post.find(params[:id])
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
-  
-  def destory
-  end
-  
   
   def update
+    post = Post.find(params[:id])
+    if post.update(post_params)
+      redirect_to post_path(post.id)
+    else
+      render "edit"
+    end
+  end
+
+  def destory
   end
   
   private
