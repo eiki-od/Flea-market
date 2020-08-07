@@ -5,7 +5,7 @@
       .side-bar__mypage
         %ul
           %li 
-            =link_to 'マイページ',edit_post_path , class:"list"
+            =link_to 'マイページ',"#", class:"list"
             %i.fas.fa-chevron-right
           %li 
             =link_to 'お知らせ',"#" , class:"list"
@@ -63,7 +63,7 @@
             =link_to '発送元・お届け先住所変更',"#" , class:"list"
             %i.fas.fa-chevron-right
           %li 
-            =link_to '支払い方法', cards_path , class:"list"
+            =link_to '支払い方法', "/cards/new" , class:"list"
             %i.fas.fa-chesvron-right
           %li 
             =link_to 'メール/パスワード',"#" , class:"list"
@@ -77,47 +77,19 @@
           %li 
             =link_to 'ログアウト' ,"/users/new", method: :delete, class:"list"
             %i.fas.fa-chevron-right
- 
     .main-page
       .main-page__profile
-        .main-page__profile__banner
-          = image_tag('material/product-img/a004.png',class:"profile-icon")
-          %p 評価 20 出品数 50
-        .main-page__profile__list
-          %h2 お知らせ
-          %ul
-            %li 
-              =link_to '事務局からメッセージ',"#" , class:"list-msg"
-            %li 
-              =link_to '事務局からメッセージ',"#" , class:"list-msg"
-            %li 
-              =link_to '事務局からメッセージ',"#" , class:"list-msg"
-            %li
-              =link_to '事務局からメッセージ',"#" , class:"list-msg"
-            %li
-              =link_to '事務局からメッセージ',"#" , class:"list-msg"
+        .main-page__history
+          .main-page__history__list
+            %label 登録クレジットカード情報
+            %br
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              %button 削除する
 
-            %li.bottom 一覧を見る
-      .main-page__history
-        .main-page__history__list
-          %h2 購入した商品
-          %ul
-            %li aaaaa
-            %li bbbbb
-            %li ccccc
-            %li.bottom 一覧を見る
-
-
-  / いますぐ無料ダウンロード
-  #bottom-ad
-    .bottom-picture
-      .bottom-picture-box
-        %h2 だれでもかんたん、人生を変えるフリマアプリ
-        %p 今すぐ無料ダウンロード！
-        %div
-          .content-btn
-            = link_to "#" do
-              = image_tag('material/icon/app-store.svg',class:"abtn")
-            = link_to "#" do
-              = image_tag('material/icon/google-play.svg',class:"gbtn")
-    = render  "template/footer"
+= render "template/footer"
