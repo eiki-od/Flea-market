@@ -10,8 +10,11 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :posts, only: [:index,:new, :show, :destroy, :edit, :update]
   resources :users, only: [:show, :new]
-  resources :cards, only: [:show, :new]
-  # 12行目にnewを加えていますが、これがログアウト画面を表示させるためのものです。
-  # ※７つのアクションのうち、使わなそうなアクションを選んで、ビューまで作るように言われてたので、この実装をしています。
-  # それ以外、newにしているこだわりはありません。
+  resources :cards, only: [:new, :show] do
+    collection do
+      get 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
+  end
 end

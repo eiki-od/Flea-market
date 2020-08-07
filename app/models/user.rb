@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :kanji_family, :kanji_first, format: { with: /\A[一-龥ぁ-ん]/}
   validates :kana_family, :kana_first, format: { with: /\A[ァ-ヶー－]+\z/}
   has_one :address
+  has_one :card, dependent: :destroy
 end
