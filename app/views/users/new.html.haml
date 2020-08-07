@@ -1,38 +1,5 @@
-.wrap
-  %header.search-bar
-    / 検索バー
-    .search-box
-      .search-box-icon
-        = image_tag('material/logo/logo.png',class:"header-logo")
-      .search-box-text
-        = form_with url: "#", method: :post, class:"input-form",local: true do |form|
-          = form.text_field :content ,class:"search",placeholder: 'キーワードから探す'
-          = form.label :submitbtn ,class:"submitbtn" do
-            = icon('fas', 'search',class:"seacrhicon")
-            = form.submit id:"submitbtn",class:"sbtn"
-    / navbar（カテゴリーetc）、トップイメージなど
-    .search-nav
-      %ul.left-lists
-        %li.category
-          %a{:href => "#"} カテゴリー
-          %a{:href => "#"}
-            %li.brand ブランド
-      %ul.right-lists
-        %a{:href => "#"}
-          %li.login ログイン
-        %a{:href => "#"}
-          %li.new 新規会員登録
-  / パンくずリスト
-  %nav.bredcrumbs
-    %ul
-      %li
-        %a{:href => ""} furima
-      %li
-        %i.fas.fa-chevron-right
-      %li
-        %a{:href => ""} マイページ
-
-
+.Render
+  = render "template/header"
   / メイン画像〜商品詳細まで
   .main
     .side-bar
@@ -108,17 +75,12 @@
           %li 
             =link_to '電話番号の確認',"#" , class:"list"
             %i.fas.fa-chevron-right
-          %li 
-            =link_to 'ログアウト' ,"/users/new", method: :delete, class:"list"
-            %i.fas.fa-chevron-right
  
     .main-page
       .main-page__logout
-        .main-page__logout__btn   
-          ログアウト  
-        -# = f.submit 'ログアウト', class: 'submit-btn'  ←これだけだとエラーになります。でも、多分これが必要です。
-        -# ここのボタンを押したリンク先に、rails routesで調べた〜pathを書くと、destroyアクションが起き、ログアウトになると思います。
-
+        .main-page__logout__btn
+          - if user_signed_in?
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
   / いますぐ無料ダウンロード
   #bottom-ad
     .bottom-picture
@@ -131,46 +93,7 @@
               = image_tag('material/icon/app-store.svg',class:"abtn")
             = link_to "#" do
               = image_tag('material/icon/google-play.svg',class:"gbtn")
-  / フッター
-  #footer
-    %ul.contents
-      %li.content
-        %h2.title-foot FURIMAについて
-        %ul
-          %li
-            %a{:href => "#"} 会社概要（運営会社）
-          %li
-            %a{:href => "#"} プライバシーポリシー
-          %li
-            %a{:href => "#"} FURIMA利用契約
-          %li
-            %a{:href => "#"} ポイントに関する特約
-      %li.content
-        %h2.title-foot FURIMAを見る
-        %ul
-          %li
-            %a{:href => "#"} カテゴリー一覧
-          %li
-            %a{:href => "#"} ブランド一覧ー
-      %li.content
-        %h2.title-foot ヘルプ＆ガイド
-        %ul
-          %li
-            %a{:href => "#"} FURIMAガイド
-          %li
-            %a{:href => "#"} FURIMAロゴ利用ガイドライン
-          %li
-            %a{:href => "#"} お知らせ
-    .logo-foot
-      = link_to "#" do
-        = image_tag('material/logo/logo-white.png',class:"biglogo")
-    %p.minilogo © FURIMA
-
-  / 出品アイコン
-  = link_to "#" do
-    .purchase-box
-      %span.purchase-text 出品する
-      = image_tag('material/icon/icon_camera.png',class:"camera-image")
+    = render  "template/footer"
 
 
 

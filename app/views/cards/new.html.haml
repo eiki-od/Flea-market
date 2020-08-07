@@ -5,7 +5,7 @@
       .side-bar__mypage
         %ul
           %li 
-            =link_to 'マイページ',edit_post_path , class:"list"
+            =link_to 'マイページ',"#", class:"list"
             %i.fas.fa-chevron-right
           %li 
             =link_to 'お知らせ',"#" , class:"list"
@@ -63,7 +63,7 @@
             =link_to '発送元・お届け先住所変更',"#" , class:"list"
             %i.fas.fa-chevron-right
           %li 
-            =link_to '支払い方法', cards_path , class:"list"
+            =link_to '支払い方法', "/cards/new" , class:"list"
             %i.fas.fa-chesvron-right
           %li 
             =link_to 'メール/パスワード',"#" , class:"list"
@@ -77,47 +77,49 @@
           %li 
             =link_to 'ログアウト' ,"/users/new", method: :delete, class:"list"
             %i.fas.fa-chevron-right
- 
     .main-page
       .main-page__profile
-        .main-page__profile__banner
-          = image_tag('material/product-img/a004.png',class:"profile-icon")
-          %p 評価 20 出品数 50
-        .main-page__profile__list
-          %h2 お知らせ
-          %ul
-            %li 
-              =link_to '事務局からメッセージ',"#" , class:"list-msg"
-            %li 
-              =link_to '事務局からメッセージ',"#" , class:"list-msg"
-            %li 
-              =link_to '事務局からメッセージ',"#" , class:"list-msg"
-            %li
-              =link_to '事務局からメッセージ',"#" , class:"list-msg"
-            %li
-              =link_to '事務局からメッセージ',"#" , class:"list-msg"
+        .main-page__history
+          .main-page__history__list
+            %label 登録クレジットカード情報
+            = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %label カード番号
+              = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+              %br
+              %label 有効期限
+              %select#exp_month{name: "exp_month", type: "text"}
+                %option{value: ""} --
+                %option{value: "1"}01
+                %option{value: "2"}02
+                %option{value: "3"}03
+                %option{value: "4"}04
+                %option{value: "5"}05
+                %option{value: "6"}06
+                %option{value: "7"}07
+                %option{value: "8"}08
+                %option{value: "9"}09
+                %option{value: "10"}10
+                %option{value: "11"}11
+                %option{value: "12"}12
+              %span 月/
+              %select#exp_year{name: "exp_year", type: "text"}
+                %option{value: ""} --
+                %option{value: "2019"}19
+                %option{value: "2020"}20
+                %option{value: "2021"}21
+                %option{value: "2022"}22
+                %option{value: "2023"}23
+                %option{value: "2024"}24
+                %option{value: "2025"}25
+                %option{value: "2026"}26
+                %option{value: "2027"}27
+                %option{value: "2028"}28
+                %option{value: "2029"}29
+              %span 年
+              %br
+              %label セキュリティコード
+              = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+              #card_token
+              = submit_tag "追加する", id: "token_submit"
 
-            %li.bottom 一覧を見る
-      .main-page__history
-        .main-page__history__list
-          %h2 購入した商品
-          %ul
-            %li aaaaa
-            %li bbbbb
-            %li ccccc
-            %li.bottom 一覧を見る
-
-
-  / いますぐ無料ダウンロード
-  #bottom-ad
-    .bottom-picture
-      .bottom-picture-box
-        %h2 だれでもかんたん、人生を変えるフリマアプリ
-        %p 今すぐ無料ダウンロード！
-        %div
-          .content-btn
-            = link_to "#" do
-              = image_tag('material/icon/app-store.svg',class:"abtn")
-            = link_to "#" do
-              = image_tag('material/icon/google-play.svg',class:"gbtn")
-    = render  "template/footer"
+= render partial: "template/footer"
