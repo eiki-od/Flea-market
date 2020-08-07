@@ -3,14 +3,16 @@ class CreatePosts < ActiveRecord::Migration[6.0]
     create_table :posts do |t|
       t.string :name
       t.text :about
-      t.integer :size
-      t.integer :status
+      t.string :image
+      t.string :area
+      t.string :category
+      t.string :size
+      t.string :status
       t.string :fee
+      t.string :method
       t.string :days
       t.integer :price
-      t.string :brand
-      t.integer :user_id
-      t.integer :category_id
+      t.string :bland
       t.timestamps
     end
   end

@@ -1,52 +1,46 @@
 class PostsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  # before_action :set_post, except: [:index, :new, :create]
   def index
     @posts = Post.includes(:images).order('created_at DESC')
   end
 
   def new
     @post = Post.new
-    @post.images.new
   end
   
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to post_path(@post.id)
     else
-      render :new
-    end
+      render "posts/new"
   end
-  
-  
-  def set_product
-    # @post = Post.find(params[:id])
-  end
+end
+
   
   def show
-  
+    @post = Post.find(params[:id])
   end
-  
-  def destory
-  end
-  
+
   def edit
+    @post = Post.find(params[:id])
   end
   
   def update
-    if @post.update(product_params)
-      redirect_to root_path
+    post = Post.find(params[:id])
+    if post.update(post_params)
+      redirect_to post_path(post.id)
     else
-      render :edit
+      render "posts/edit"
     end
   end
-  
-  def destroy
+
+  def destory
   end
   
   private
   
   def post_params
-    params.require(:post).permit(images_attributes: [:src])
+    params.require(:post).permit(:name,:about,:size,:bland,:status,:fee,:days,:price,:method,:area,:category,:image)
   end
 end

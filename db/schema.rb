@@ -42,14 +42,16 @@ ActiveRecord::Schema.define(version: 2020_08_05_032920) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "about"
-    t.integer "size"
-    t.integer "status"
+    t.string "image"
+    t.string "area"
+    t.string "category"
+    t.string "size"
+    t.string "status"
     t.string "fee"
+    t.string "method"
     t.string "days"
     t.integer "price"
-    t.string "brand"
-    t.integer "user_id"
-    t.integer "category_id"
+    t.string "bland"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
