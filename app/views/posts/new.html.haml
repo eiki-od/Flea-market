@@ -7,7 +7,6 @@
         %p.image 出品画像 必須
         %p.max-10 最大10枚までアップロードできます
         = form.file_field :image
-      .items
         %p 商品名 必須
         = form.text_field :name ,placeholder:"40文字まで"
         %p.about 商品の説明 必須
@@ -44,4 +43,3 @@
   = link_to root_path do
     = image_tag('material/logo/logo-white.png',class:"footer-logo")
   %p.minilogo © FURIMA
-

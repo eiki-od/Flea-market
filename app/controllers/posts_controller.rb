@@ -31,7 +31,7 @@ end
     if post.update(post_params)
       redirect_to post_path(post.id)
     else
-      render "edit"
+      render "posts/edit"
     end
   end
 
@@ -41,6 +41,6 @@ end
   private
   
   def post_params
-    params.require(:post).permit(:name,:about,:size,:bland,:status,:fee,:days,:price,:method,:area,:category)
+    params.require(:post).permit(:name,:about,:size,:bland,:status,:fee,:days,:price,:method,:area,:category,:image)
   end
 end

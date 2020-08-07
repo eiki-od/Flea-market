@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_07_29_065022) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "about"
+    t.string "image"
     t.string "area"
     t.string "category"
     t.string "size"

@@ -4,7 +4,8 @@
     <div class="show-contents">
         <p class="post-box-name"><%= @post.name %></p>
       <div class="box">
-        <div  class="image-box">
+        <div  class="image">
+          <p class="post-box-image"><%= image_tag @post.image.url if @post.image?%></p>
         </div>
         <div class="show-item">
           <table>

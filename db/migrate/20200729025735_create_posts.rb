@@ -3,6 +3,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
     create_table :posts do |t|
       t.string :name
       t.text :about
+      t.string :image
       t.string :area
       t.string :category
       t.string :size
