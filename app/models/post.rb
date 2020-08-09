@@ -7,7 +7,6 @@ class Post < ApplicationRecord
     validates :size
     validates :status
     validates :fee
-    validates :method
     validates :days
     validates :price
   end
