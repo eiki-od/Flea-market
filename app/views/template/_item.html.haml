@@ -1,0 +1,16 @@
+.list-new
+  - @posts.each do |post|
+    = link_to "#" do
+      .product
+        .img-new
+          -# = image_tag post.image[0].image
+          .info
+          %p 
+            = post.name 
+            %br/
+            ¥
+            - price = post.price*1.1
+            = price.truncate
+            (税込)
+            %i.fas.fa-star
+              0

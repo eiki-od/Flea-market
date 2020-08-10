@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A\S+@\S+\.\S+\z/}
   validates :kanji_family, :kanji_first, format: { with: /\A[一-龥ぁ-ん]/}
   validates :kana_family, :kana_first, format: { with: /\A[ァ-ヶー－]+\z/}
-  has_one :address
-  has_one :card, dependent: :destroy
+  has_one :address, dependent: :destroy
+  has_many :cards, dependent: :destroy
+  has_many :posts
 end
