@@ -9,7 +9,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :size
       t.string :status
       t.string :fee
-      t.string :method
+      t.string :delivery
       t.string :days
       t.integer :price
       t.string :bland
