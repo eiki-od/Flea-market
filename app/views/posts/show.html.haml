@@ -1,0 +1,68 @@
+= render "template/header"
+.wrapper
+  .show
+    .show-contents
+      %p.post-box-name= @post.name
+      .box
+        .image
+          %p.post-box-image= image_tag @post.image.url if @post.image?
+        .show-item
+          %table
+            %tr
+              %td
+                %p.post-box.post-box-user.table-left 出品者
+              %td
+                %p.post-box.post-box-user 出品者
+            %tr
+              %td
+                %p.post-box.post-box-category.table-left カテゴリー
+              %td
+                %p.post-box.post-box-category= @post.category
+            %tr
+              %td
+                %p.post-box.post-box-bland.table-left ブランド
+              %td
+                %p.post-box.post-box-bland
+                  = @post.bland
+                  　
+            %tr
+              %td
+                %p.post-box.post-box-size.table-left 商品のサイズ
+              %td
+                %p.post-box.post-box-size= @post.size
+            %tr
+              %td
+                %p.post-box.post-box-status.table-left 商品の状態
+              %td
+                %p.post-box.post-box-status= @post.status
+            %tr
+              %td
+                %p.post-box.post-box-fee.table-left 配送料の負担
+              %td
+                %p.post-box.post-box-fee= @post.fee
+            %tr
+              %td
+                %p.post-box.post-box-method.table-left 配送の方法
+              %td
+                %p.post-box.post-box-method= @post.delivery
+            %tr
+              %td
+                %p.post-box.post-box-area.table-left 配送元地域
+              %td
+                %p.post-box.post-box-area= @post.area
+            %tr
+              %td
+                %p.post-box.post-box-days.table-left 発送日の目安
+              %td
+                %p.post-box.post-box-days= @post.days
+      %p.post-box-price
+        ¥#{@post.price}
+        %span.span-fee
+          (税込み) #{@post.fee}
+          %span
+      %p.post-box-about= @post.about
+  .show-btn
+    %p.edit-btn= link_to "編集する", edit_post_path
+    %p.or or
+    = link_to "この商品を削除する", post_path(@post.id), method: :delete
+= render "template/footer"
