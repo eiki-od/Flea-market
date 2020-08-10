@@ -8,6 +8,7 @@ class Post < ApplicationRecord
     validates :status
     validates :fee
     validates :days
+    validates :delivery
     validates :price
   end
   validates :name, length: { maximum: 40}
