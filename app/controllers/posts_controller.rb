@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(post_params)
-    if @post.save
+    if @post.save!
       redirect_to post_path(@post.id)
     else
       render "posts/new"
@@ -41,6 +41,6 @@ end
   private
   
   def post_params
-    params.require(:post).permit(:name,:about,:size,:bland,:status,:fee,:days,:price,:method,:area,:category,:image)
+    params.require(:post).permit(:name,:about,:size,:bland,:status,:fee,:days,:price,:delivery,:area,:category,:image)
   end
 end

@@ -117,15 +117,8 @@
           .header-new
             %h3.text-new 新規投稿商品
           .lists-new
-            .list-new
-              - @posts.each do |post|
-              = post.image
-            .list-new
-              = render  "template/item"
-            .list-new
-              = render  "template/item"
-            .list-new
-              = render  "template/item"
+            = render "template/item"
+
       / ピックアップブランド アーカイバ
       #pickup-new
         %h2.title-new ピックアップブランド

@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_032920) do
     t.string "size"
     t.string "status"
     t.string "fee"
-    t.string "method"
+    t.string "delivery"
     t.string "days"
     t.integer "price"
     t.string "bland"

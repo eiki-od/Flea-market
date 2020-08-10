@@ -1,12 +1,16 @@
-= link_to "#" do
-  %figure.img-new
-    = image_tag('material/product-img/a007.png',class:"prod-img")
-  .product-box
-    -# = posts_path(post.id), method: :get
-    .details
-      %ul.money-box
-        %li.price 1000円
-        %li
-          %i.fas.fa-star
-          0
-      %p.tax (税込)
+.list-new
+  - @posts.each do |post|
+    = link_to "#" do
+      .product
+        .img-new
+          -# = image_tag post.image[0].image
+          .info
+          %p 
+            = post.name 
+            %br/
+            ¥
+            - price = post.price*1.1
+            = price.truncate
+            (税込)
+            %i.fas.fa-star
+              0
