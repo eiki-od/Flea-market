@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   end
 
   def destory
-    @post = Post.find_post_by_id
+    @post = Post.find(params[:id])
     @post.destroy
   end
   
