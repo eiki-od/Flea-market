@@ -1328,3 +1328,37 @@ input#post_price {
   font-weight: normal;
   font-size: 16px;
 }
+.post-box-image-top {
+  display: flex;
+  justify-content: center;
+  img {
+    height: 100px;
+    width: 80px;
+    text-align: center;
+  }
+}
+
+
+.product {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 30px;
+  background-color: #fff;
+}
+.post-neme-top {
+  font-size: 16px;
+}
+.list-new {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  background-color: whitesmoke;
+}
+.itembox-new {
+  background-color: whitesmoke;
+  a {
+    background-color: whitesmoke;
+  }
+} 

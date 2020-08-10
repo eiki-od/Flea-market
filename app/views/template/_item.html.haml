@@ -4,13 +4,14 @@
       .product
         .img-new
           -# = image_tag post.image[0].image
-          .info
-          %p 
-            = post.name 
-            %br/
-            ¥
-            - price = post.price*1.1
-            = price.truncate
-            (税込)
-            %i.fas.fa-star
-              0
+          %p.post-box-image-top= image_tag post.image.url
+        .info
+        %p.post-name-top 
+          = post.name 
+          %br/
+          ¥
+          - price = post.price*1.1
+          = price.truncate
+          (税込)
+          %i.fas.fa-star
+            0

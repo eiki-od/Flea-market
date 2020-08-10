@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :posts
   post 'posts/:id' => 'posts#update'
   get 'posts/:id/edit' => 'posts#edit'
-  resources :users, only: [:show, :destroy, :new]
+  resources :users
   # 12行目にnewを加えていますが、これがログアウト画面を表示させるためのものです。
   # ※７つのアクションのうち、使わなそうなアクションを選んで、ビューまで作るように言われてたので、この実装をしています。
   # それ以外、newにしているこだわりはありません。
