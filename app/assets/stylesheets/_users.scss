@@ -88,21 +88,24 @@ header{
   }
   .picture{
     height: 560px;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
     display: flex;
     align-items: center;
-    padding: 0px 60px;
-    background-image: url(material/pict/bg-mainVisual-pict_pc.png);
-    h2{
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      font-size: 60px;
-      line-height: 1.2;
-      color: #fff;
-      margin-top: 50px;
+    .picture-box {
+      position: absolute;
+      padding: 0px 60px;
     }
+      h2{
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 60px;
+        line-height: 1.2;
+        color: #fff;
+        margin-top: 50px;
+      }
     
 
     p{
@@ -298,15 +301,13 @@ header{
 //いますぐダウンロード
 .bottom-picture{
   height: 350px;
-  background-size: cover;
-  background-image: url(material/pict/bg-appBanner-pict.png);
-  background-position: center;
+  width: 100%;
+  display: flex;
   .bottom-picture-box{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 100px 40px;
-
+    padding: 100px 500px;
+    position: absolute;
+    align-items: center;
+    
     h2{
       color: #fff;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);

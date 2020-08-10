@@ -175,8 +175,8 @@ header{
 
 .middle-picture{
   height: 400px;
+  width: 100%;
   background-size: cover;
-  background-image: url(material/pict/bg-topMiddleDl-pict.png);
   background-position: bottom right;
   position: relative;
   display: flex;
@@ -184,9 +184,9 @@ header{
 
   .middle-picture-box{
     max-width: 1040px;
-    width: 100%;
+    padding: 0px 200px;
     margin: 0 auto;
-
+    position: absolute;
 
     h2{
       color: #fff;
@@ -370,52 +370,6 @@ header{
   }
 }
 
-.bottom-picture{
-  height: 350px;
-  background-size: cover;
-  background-image: url(material/pict/bg-appBanner-pict.png);
-  background-position: center;
-  .bottom-picture-box{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 100px 40px;
-
-    h2{
-      color: #fff;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      text-align: center;
-      max-width: 1040px;
-      width: 100%;
-      margin: 0 auto;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    p{
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      font-size: 35px;
-      color: #fff;
-      text-align: center;
-      margin-bottom: 10px;
-
-    }
-    .content-btn{
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      .abtn{
-        height: 53px;
-        width: 180px;
-      }
-      .gbtn{
-        height: 53px;
-        width: 180px;
-        margin-left: 10px;
-      }
-    }
-  }
-
-}
 
 #footer{
   background-color: #272727;
@@ -1077,55 +1031,6 @@ input#post_price {
 
   }
 //（ここまで）トップページのリンクを貼る//
-
-}
-
-
-//いますぐダウンロード
-.bottom-picture{
-  height: 350px;
-  background-size: cover;
-  background-image: url(material/pict/bg-appBanner-pict.png);
-  background-position: center;
-  .bottom-picture-box{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 100px 40px;
-
-    h2{
-      color: #fff;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      text-align: center;
-      max-width: 1040px;
-      width: 100%;
-      margin: 0 auto;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    p{
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      font-size: 35px;
-      color: #fff;
-      text-align: center;
-      margin-bottom: 10px;
-
-    }
-    .content-btn{
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      .abtn{
-        height: 53px;
-        width: 180px;
-      }
-      .gbtn{
-        height: 53px;
-        width: 180px;
-        margin-left: 10px;
-      }
-    }
-  }
 
 }
 
