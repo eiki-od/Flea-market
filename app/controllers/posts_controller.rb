@@ -14,8 +14,8 @@ class PostsController < ApplicationController
       redirect_to post_path(@post.id)
     else
       render "posts/new"
+    end 
   end
-end
 
   
   def show
@@ -36,11 +36,13 @@ end
   end
 
   def destory
+    @post = Post.find_post_by_id
+    @post.destroy
   end
   
   private
   
   def post_params
-    params.require(:post).permit(:name,:about,:size,:bland,:status,:fee,:days,:price,:method,:area,:category,:image)
+    params.require(:post).permit(:name,:about,:size,:bland,:status,:fee,:days,:price,:delivery,:area,:category,:image)
   end
 end

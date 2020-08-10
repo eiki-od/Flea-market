@@ -1,4 +1,5 @@
 <%# <% @posts.each do |post| %> 
+<%=render "template/header"%>
 <div class="wrapper">
   <div class="show">
     <div class="show-contents">
@@ -35,7 +36,7 @@
           </tr>
           <tr>
             <td><p class="post-box post-box-method table-left">配送の方法</p></td>
-            <td><p class="post-box post-box-method"><%= @post.method %></p></td>
+            <td><p class="post-box post-box-method"><%= @post.delivery %></p></td>
           </tr>
           <tr>
             <td><p class="post-box post-box-area table-left">配送元地域</p></td>
@@ -55,7 +56,8 @@
   <div class="show-btn">
     <p class="edit-btn"><%=link_to "編集する", edit_post_path %></p>
     <p class="or">or</p>
-    <p class="destroy-btn"><%=link_to "この商品を削除する", "/users/mypage" %></p>
+    <%= link_to "この商品を削除する", @post, method: :delete %>
   </div>
   <%# <% end %> 
 </div>
+  <%=render "template/footer"%>
