@@ -10,6 +10,7 @@ class Post < ApplicationRecord
     validates :days
     validates :price
   end
+  validates :name, length: { maximum: 40}
   mount_uploader :image, ImageUploader
   # belongs_to :user
   # belongs_to :category
