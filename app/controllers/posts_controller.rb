@@ -36,6 +36,8 @@ end
   end
 
   def destory
+    post = Post.find(params[:id])
+    post.destroy
   end
   
   private
