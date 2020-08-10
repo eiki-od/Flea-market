@@ -34,6 +34,7 @@
               = link_to "新規登録", new_user_registration_path, class: "login"
               = link_to "ログイン", new_user_session_path, class: "new"
         .picture
+          = image_tag('material/pict/bg-mainVisual-pict_pc.png', class:"picture")
           .picture-box
             %h2 人生を変えるフリマアプリ
             %p
@@ -77,6 +78,7 @@
       / 会員数日本一
       #middle-ad
         .middle-picture
+          = image_tag('material/pict/bg-topMiddleDl-pict.png', class:"middle-picture")
           .middle-picture-box
             %h2 会員数日本一位
             %p
@@ -181,6 +183,7 @@
       / いますぐ無料ダウンロード
       #bottom-ad
         .bottom-picture
+          = image_tag('material/pict/bg-appBanner-pict.png', class:"middle-picture")
           .bottom-picture-box
             %h2 だれでもかんたん、人生を変えるフリマアプリ
             %p 今すぐ無料ダウンロード！
@@ -225,6 +228,7 @@
             = image_tag('material/logo/logo-white.png',class:"biglogo")
         %p.minilogo © FURIMA
       / 出品アイコン
+      .icon
       = link_to new_post_path do
         .purchase-box
           %span.purchase-text 出品する
