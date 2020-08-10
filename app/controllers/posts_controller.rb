@@ -1,12 +1,14 @@
 class PostsController < ApplicationController
   # before_action :set_post, except: [:index, :new, :create]
-  # before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show]
   def index
     @posts = Post.includes(:images).order('created_at DESC')
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(
+    user_id: current_user.id
+    )
   end
   
   def create
@@ -45,12 +47,12 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:name,:about,:size,:bland,:status,:fee,:days,:price,:delivery,:area,:category,:image)
+    params.require(:post).permit(:name,:about,:size,:bland,:status,:fee,:days,:price,:delivery,:area,:category,:image,).merge(user_id: current_user.id)
   end
 
-  # def move_to_index
-  #   unless user_signed_in?
-  #     redirect_to action: :index
-  #   end
-  # end
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
 end

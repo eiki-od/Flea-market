@@ -13,6 +13,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :days
       t.integer :price
       t.string :bland
+      t.integer :user_id
       t.timestamps
     end
   end

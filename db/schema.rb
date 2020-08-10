@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_032920) do
     t.string "days"
     t.integer "price"
     t.string "bland"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
