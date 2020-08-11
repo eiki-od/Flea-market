@@ -1,9 +1,8 @@
 .list-new
   - @posts.each do |post|
-    = link_to "#" do
+    = link_to post_path(post) do
       .product
         .img-new
-          -# = image_tag post.image[0].image
           %p.post-box-image-top= image_tag post.image.url
         .info
         %p.post-name-top 
