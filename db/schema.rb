@@ -52,9 +52,10 @@ ActiveRecord::Schema.define(version: 2020_08_05_032920) do
     t.string "days"
     t.integer "price"
     t.string "bland"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,4 +77,5 @@ ActiveRecord::Schema.define(version: 2020_08_05_032920) do
   end
 
   add_foreign_key "images", "posts"
+  add_foreign_key "posts", "users"
 end
