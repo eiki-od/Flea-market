@@ -5,8 +5,23 @@
     .exhibition
       .images
         %p.image 出品画像 必須
-        %p.max-10 最大10枚までアップロードできます
-        = form.file_field :image
+        %p.max-10 最大5枚までアップロードできます
+        #image-box
+          #previews
+            - if @post.persisted?
+              - @post.images.each_with_index do |image, i|
+                = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+          = form.fields_for :images do |image|
+            .js-file_group{"data-index" => "#{image.index}"}
+              = image.file_field :src, class: 'js-file'
+              %br/
+              %span.js-remove 削除
+            - if @post.persisted?
+              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+          - if @post.persisted?
+            .js-file_group{"data-index" => "#{@post.images.count}"}
+              = file_field_tag :src, name: "post[images_attributes][#{@post.images.count}][src]", class: 'js-file'
+              .js-remove 削除
         %p 商品名 必須
         = form.text_field :name ,placeholder:"40文字まで"
         %p.about 商品の説明 必須
