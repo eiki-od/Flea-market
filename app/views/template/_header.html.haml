@@ -3,6 +3,7 @@
     / 検索バー
     .search-box
       .search-box-icon
+      = link_to root_path do
         = image_tag('material/logo/logo.png',class:"header-logo")
       .search-box-text
         = form_with url: "#", method: :post, class:"input-form",local: true do |form|
