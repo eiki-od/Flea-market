@@ -1,17 +1,27 @@
-%h2 購入を確定しますか？
-%p.fee
-  - price = @post.price*1.1
-  = price.truncate
-%br
-%h3 支払い方法
-- if @default_card_information.blank?
-  %br /
-- else
-  -#以下カード情報を表示
-  = "**** **** **** " + @default_card_information.last4
-  - exp_month = @default_card_information.exp_month.to_s
-  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-  = exp_month + " / " + exp_year
-%br
-= form_tag(action: :pay, method: :post) do
-  %button 購入する
+.purchase
+  .header-logo-post
+    = image_tag('material/logo/logo.png',class:"head-logo")
+  .p-item
+    %h2.really 購入内容の確認
+    .p-name
+    = @post.name
+    %p.fee
+      - price = @post.price*1.1
+      支払い金額：¥
+      = price.truncate
+    %br
+    %h3.pay 支払い方法
+    - if @default_card_information.blank?
+      %br /
+    - else
+      -#以下カード情報を表示
+      = "**** **** **** " + @default_card_information.last4
+      - exp_month = @default_card_information.exp_month.to_s
+      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+      = exp_month + " / " + exp_year
+    %br
+    = form_tag(action: :pay, method: :post) do
+      %button.p-btn 購入する
+
+  = image_tag('material/logo/logo-white.png',class:"footer-logo")
+  %p.minilogo © FURIMA

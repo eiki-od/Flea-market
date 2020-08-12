@@ -1372,3 +1372,45 @@ input#post_price {
   text-align: center;
   margin-right: 30px;
 }
+
+// 購入確認ページ
+.purchase {
+  background-color: whitesmoke;
+  height: 100vh;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  .p-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 40vw;
+    height: 60vh;
+    .really {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+    .fee {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .pay {
+      font-size: 16px;
+    }
+    .p-btn {
+      width: 20vw;
+      height: 6vh;
+      margin-top: 40px;
+      background-color: #3CCACE;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      color: #fff;
+    }
+    .p-btn:hover {
+        opacity: 0.8;
+      }
+  }
+}
