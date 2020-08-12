@@ -19,9 +19,8 @@ class PurchaseController < ApplicationController
   def pay
     @post = Post.find(params[:post_id])
     if @post.buyer_id.present?
-      redirect_to root_path and return
+      redirect_to root_path, alert: "ごめん売りけれとるばい" and return
     end
-    flash.now[:alert] = "購入されています"
     price = @post.price*1.1
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']

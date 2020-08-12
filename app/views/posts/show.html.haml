@@ -72,8 +72,6 @@
             = link_to "この商品を削除する", post_path(@post.id), method: :delete
         -elsif user_signed_in?
           %p.edit-btn= link_to "購入画面へ進む", post_purchase_index_path(@post.id)
-        -elsif @post.buyer_id present?
-          %p.edit-btn= link_to "購入されています", root_path
         -else
           %p.edit-btn= link_to "購入画面へ進む", new_user_registration_path
 = render "template/footer"
