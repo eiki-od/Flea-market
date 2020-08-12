@@ -14,6 +14,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer :price
       t.string :bland
       t.references :user, index: true, foreign_key: true
+      t.integer :buyer_id, foreign_key: true
       t.timestamps
     end
   end

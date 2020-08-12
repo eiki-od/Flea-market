@@ -316,13 +316,6 @@ header{
 
     .list-new{
       background-color: white;
-      .img-new{
-        width: 220px;
-        height: 150px;
-        position: relative;
-        overflow: hidden;
-        margin: 0px;
-        z-index: auto;
         .prod-img{
           position: absolute;
           top: 0;
@@ -334,7 +327,6 @@ header{
           height: 150px;
           object-fit: cover;
         }
-      }
       a{
         text-decoration: none;
         color: black;
@@ -1355,22 +1347,44 @@ input#post_price {
 .post-neme-top {
   font-size: 16px;
 }
+
 .list-new {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
   background-color: whitesmoke;
 }
+
 .itembox-new {
   background-color: whitesmoke;
   a {
     background-color: whitesmoke;
   }
 } 
-.image {
-  width: 260px;
+.img-new-sold {
   text-align: center;
   margin-right: 30px;
+  border-top: 60px solid #ea352d ;
+  border-right: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid #ea352d ;
+  z-index:100;
+  top:-320px;
+}
+.img-new-sold-text {
+  transform: rotate(-45deg);
+  font-size: 28px;
+  margin:-35px 0px 0px -55px;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.Notification {
+  background-color: tomato;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "SoukouMincho";
+  text-align: center;
 }
 
 // 購入確認ページ
