@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # ※７つのアクションのうち、使わなそうなアクションを選んで、ビューまで作るように言われてたので、この実装をしています。
   # それ以外、newにしているこだわりはありません。
   resources :posts, only: [:index,:new, :show, :destroy, :edit, :update] do
-    resources :purchase, only: [:index, :destroy] do
+    resources :purchase, only: [:index, :done] do
       collection do
         get 'index', to: 'purchase#index'
         post 'pay', to: 'purchase#pay'

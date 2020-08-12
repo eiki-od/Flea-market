@@ -18,6 +18,10 @@ class PurchaseController < ApplicationController
 
   def pay
     @post = Post.find(params[:post_id])
+    if @post.buyer_id.present?
+      redirect_to root_path and return
+    end
+    flash.now[:alert] = "購入されています"
     price = @post.price*1.1
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
@@ -26,6 +30,11 @@ class PurchaseController < ApplicationController
     :customer => card.customer_id,
     :currency => 'jpy', 
   )
-  redirect_to action: 'done' #完了画面に移動
+  redirect_to action: 'done' and return #完了画面に移動
+  end
+
+  def done
+    @product_buyer= Post.find(params[:post_id])
+    @product_buyer.update( buyer_id: current_user.id)
   end
 end
