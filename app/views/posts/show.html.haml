@@ -58,7 +58,9 @@
               %td
                 %p.post-box.post-box-days= @post.days
       %p.post-box-price
-        ¥#{@post.price}
+        - price = @post.price*1.1
+        ¥
+        = price.truncate
         %span.span-fee
           (税込み) #{@post.fee}
           %span
