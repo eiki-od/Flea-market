@@ -1,7 +1,7 @@
 %h2 購入を確定しますか？
-%p.item
-  = post.name
-%p ¥135,000(送料込み)
+%p.fee
+  - price = @post.price*1.1
+  = price.truncate
 %br
 %h3 支払い方法
 - if @default_card_information.blank?
