@@ -5,7 +5,9 @@
       %p.post-box-name= @post.name
       .box
         .image
-          %p.post-box-image= image_tag @post.image.url if @post.image?
+          .slick
+            - @post.images.each do |image|
+              %p.post-box-image= image_tag image.src.url
         .show-item
           %table
             %tr

@@ -1237,6 +1237,9 @@ input#post_price {
       color: #333;
       border: 0.5px solid #eee;
     }
+    img {
+      
+    }
   }
 }
 
@@ -1254,7 +1257,6 @@ input#post_price {
   font-size: 30px;
 }
 .image {
-  margin-right: 20px;
   margin-top: 0;
 }
 .post-box-about {
@@ -1338,7 +1340,7 @@ input#post_price {
   }
 }
 
-
+// トップページ一覧
 .product {
   height: 250px;
   display: flex;
@@ -1362,3 +1364,8 @@ input#post_price {
     background-color: whitesmoke;
   }
 } 
+.image {
+  width: 260px;
+  text-align: center;
+  margin-right: 30px;
+}

@@ -1,5 +1,15 @@
-//= require activestorage
 //= require turbolinks
+//= require jquery
+//= require jquery_ujs
 //= require_tree .
-//= require jquery 
-//= require jquery_ujs 
+//= require activestorage
+
+$(function() {
+  console.log("ok")
+  $(".slick").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  });
+});
+
+
