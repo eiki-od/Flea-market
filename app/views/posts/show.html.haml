@@ -64,13 +64,12 @@
           %span
       %p.post-box-about= @post.about
       
-    .show-btn
-    -if user_signed_in? && current_user.id == @post.user_id
-      %p.edit-btn= link_to "編集する", edit_post_path
-      %p.or or
-
-      .destroy-btn
-        = link_to "この商品を削除する", post_path(@post.id), method: :delete
-       -else 
-    %p.edit-btn= link_to "購入画面へ進む", post_purchase_index_path(@post.id)
+      .show-btn
+        -if user_signed_in? && current_user.id == @post.user_id
+          %p.edit-btn= link_to "編集する", edit_post_path
+          %p.or or
+          .destroy-btn
+            = link_to "この商品を削除する", post_path(@post.id), method: :delete
+        -else 
+          %p.edit-btn= link_to "購入画面へ進む", post_purchase_index_path(@post.id)
 = render "template/footer"
