@@ -3,7 +3,8 @@
     = link_to post_path(post) do
       .product
         .img-new
-          -# %p.post-box-image-top= image_tag post.image.url
+          %p.post-box-image-item 
+            = image_tag post.images[0].src.url
           -if post.buyer_id.present? 
             .img-new-sold
               .img-new-sold-text
