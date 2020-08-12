@@ -3,8 +3,7 @@
     = link_to "#" do
       .product
         .img-new
-          -# - @post.images.each do |image|
-            = image_tag image.src.url
+          = image_tag post.src.url
         .info
         %p.post-name-top 
           = post.name 
