@@ -423,6 +423,9 @@ header{
     background-color: white;
     height: 150px;
     display: flex;
+    :hover {
+      opacity: 0.9;
+    }
     &__btn{
       background-color: #3CCACE;
       color: white;
@@ -432,6 +435,13 @@ header{
       text-align: center;
       margin: auto;
       line-height: 50px;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      a:hover {
+        opacity: 1;
+      }
     }
   }
 }

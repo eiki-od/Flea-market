@@ -119,68 +119,10 @@
         .itembox-new
           .header-new
             %h3.text-new 新規投稿商品
-            .lists-new
-              = render "template/item"
 
-      -# / ピックアップブランド アーカイバ
-      -# #pickup-new
-      -#   %h2.title-new ピックアップブランド
-      -#   .itembox-new
-      -#     .header-new
-      -#       %h3.text-new アーカイバ
-      -#     .lists-new
-      -#       .list-new
-      -#         = link_to "/posts/1" ,method: :get do
-      -#           %figure.img-new
-      -#             = image_tag('material/product-img/a001.png',class:"prod-img")
-      -#           .product-box
-      -#             %h3.prod-name ee
-      -#             .details
-      -#               %ul.money-box
-      -#                 %li.price 1000円
-      -#                 %li
-      -#                   %i.fas.fa-star
-      -#                   0
-      -#               %p.tax (税込)
-      -#       .list-new
-      -#         = link_to "/users/mypage" do
-      -#           %figure.img-new
-      -#             = image_tag('material/product-img/a007.png',class:"prod-img")
-      -#           .product-box
-      -#             %h3.prod-name ee
-      -#             .details
-      -#               %ul.money-box
-      -#                 %li.price 1000円
-      -#                 %li
-      -#                   %i.fas.fa-star
-      -#                   0
-      -#               %p.tax (税込)
-      -#       .list-new
-      -#         = link_to "#" do
-      -#           %figure.img-new
-      -#             = image_tag('material/product-img/a004.png',class:"prod-img")
-      -#           .product-box
-      -#             %h3.prod-name ee
-      -#             .details
-      -#               %ul.money-box
-      -#                 %li.price 1000円
-      -#                 %li
-      -#                   %i.fas.fa-star
-      -#                   0
-      -#               %p.tax (税込)
-      -#       .list-new
-      -#         = link_to "#" do
-      -#           %figure.img-new
-      -#             = image_tag('material/product-img/a001.png',class:"prod-img")
-      -#           .product-box
-      -#             %h3.prod-name ee
-      -#             .details
-      -#               %ul.money-box
-      -#                 %li.price 1000円
-      -#                 %li
-      -#                   %i.fas.fa-star
-      -#                   0
-      -#               %p.tax (税込)
+          .lists-new
+            = render "template/item"
+            
       / いますぐ無料ダウンロード
       #bottom-ad
         .bottom-picture
