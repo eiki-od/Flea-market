@@ -1278,6 +1278,7 @@ input#post_price {
   align-items: center;
   width: 54vw;
   margin-bottom: 50px;
+  height: 15vh;
   .edit-btn {
     text-decoration: none;
     width: 45vw;
@@ -1286,6 +1287,7 @@ input#post_price {
     height: 50px;
     line-height: 50px;
     border-radius: 5px;
+    margin-top: 0;
   }
   .edit-btn:hover {
     opacity: 0.8;
